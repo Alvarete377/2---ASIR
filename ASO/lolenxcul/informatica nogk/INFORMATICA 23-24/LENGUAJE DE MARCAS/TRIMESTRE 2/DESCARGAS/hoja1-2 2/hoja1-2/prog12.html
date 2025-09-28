@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+/*
+Dado tres valores numéricos obtener el mayor de los tres.
+*/
+  var num1, num2, num3;
+
+  num1=prompt('Ingrese el primer número:','');  
+  num1=parseInt(num1);
+  num2=prompt('Ingrese el segundo número:','');  
+  num2=parseInt(num2);
+  num3=prompt('Ingrese el tercer número:','');  
+  num3=parseInt(num3);
+  
+  Visualizar (num1, num2, num3);
+  
+  // ---------------- FUNCIONES --------------------
+ 
+  
+  function Visualizar (num1, num2, num3){
+      if (num1 > num2){
+          if (num1 > num3){
+              alert ('el mayor es el primero');
+          } else {
+              alert ('el mayor es el tercero');
+          }
+      } else { 
+          if (num2 > num3){
+              alert ('el mayor es el segundo');
+          } else {
+              alert ('el mayor es el tercero');
+          }
+      }
+         
+          
+  }
+
+
+  
+</script>
+
+</body>
+</html>

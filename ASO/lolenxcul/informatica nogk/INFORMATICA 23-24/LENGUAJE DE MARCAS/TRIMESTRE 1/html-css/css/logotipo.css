@@ -1,0 +1,22 @@
+* {
+    margin: 0% auto;
+}
+
+div#logo {
+    float:left ;
+}
+
+div#buscador {
+    float: right;
+}
+
+div#cabecera2{
+    background-color: blue;
+    color: white;
+    margin: 50px;
+
+}
+
+aside {
+    margin: 50px;
+}

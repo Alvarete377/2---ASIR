@@ -1,0 +1,36 @@
+El direccionamiento IP de cada área se obtendrá a partir de los siguientes prefijos:
+• Direccionamiento para el área A: 2001:a1fa:a000::/36
+• Direccionamiento para el área B: 2001:beef:b000::/36
+• Direccionamiento para el área C: 2001:c0ca:c000::/36
+• Direccionamiento para el backbone: 2001:db8:f000:/36
+En cada una de dichas áreas, usa el siguiente plan de direccionamiento:
+
+
+• Reserva un /40 para las redes de distribución.
+
+◦ Reserva un /44 para redes de tipo Point To Point y Loopbacks
+
+
+▪ Usa el primer /112 para Loopbacks
+
+▪ Usa /126 en redes PtP
+
+◦ Utiliza redes /64 para redes de distribución de otro tipo
+
+• Reserva un /46 para el PoP (RA y RB), distribuyendo el prefijo usando DHCPv6. Úsalos en las redes de acceso
+
+
+2001:alfa:a000::/36
+	2001:alfa:a000::/40 Distribuicion y Loopback
+		2001:alfa:a000::/44 Ptp y Loopback
+			2001:alfa:a000::/112 Loopback
+	2001:alfa:a010::/44 resto de distribuicion
+	2001:alfa:a011::/44 resto de distribuicion
+	....
+	2001:alfa:a0ff::/44 resto de distribucion
+	
+	2001:alfa:a100::/40 reservado
+		2001:alfa:a100::/46 para el POP
+		
+	
+	

@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+/*
+Dado un numero, obtener  la suma de los inferiores a el, hasta el 1
+*/
+  var num;
+
+
+// -------- PROGRAMA PRINCIPAL ------------
+  num=prompt('Ingrese el número:','');  
+  num=parseInt(num);
+  
+
+  x = Suma (num);
+  Visualizar (x);
+  
+  // ---------------- FUNCIONES --------------------
+  function Suma (n){
+     suma = 0;
+     i = n -1;
+     while (i >= 1){
+         suma = suma + i;
+         i--;
+     }
+     return suma;
+  
+  }
+  
+  function Visualizar (resul){
+      alert ("la suma es:"+resul);
+  }
+
+
+  
+</script>
+
+</body>
+</html>

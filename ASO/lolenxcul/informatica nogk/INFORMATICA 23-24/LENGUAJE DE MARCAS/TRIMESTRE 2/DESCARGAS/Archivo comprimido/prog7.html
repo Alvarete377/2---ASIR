@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+/*
+Dados dos números visualizar si su suma es superior a su producto o al contrario.
+*/
+  var num1, num2, suma, producto;
+
+  num1=prompt('Ingrese el primer número:','');  
+  num1=parseInt(num1);
+  num2=prompt('Ingrese el primer segundo:','');  
+  num2=parseInt(num2);
+  
+  suma = Suma(num1, num2);
+  producto = Producto (num1, num2);
+  Visualizar (suma, producto);
+  
+  // ---------------- FUNCIONES --------------------
+  function Suma (num1, num2){
+     suma = num1 + num2;
+     return suma;
+  }
+  
+   function Producto (num1, num2){
+     producto = num1 * num2;
+     return producto;
+  }
+  
+  function  Visualizar (suma, producto){
+      if (suma > producto){
+          alert ('la suma es superior al producto');
+      } else {
+           if (producto > suma){
+                alert ('El producto es superior a la suma');
+           } else {
+               alert ('son iguales');
+           }
+      }
+  }
+  
+</script>
+
+</body>
+</html>

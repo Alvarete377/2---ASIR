@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>FUNCIONES</h1>
+
+<p>Media de 4 numeros</p>
+
+<p> Se necesitan dos valores distintos para calcular su media</p>
+<p id="media"> </p>
+<script>
+    function Media(num1, num2) {
+      return (num1 + num2) / 2;
+    }
+    var num1 = 4;
+    var num2 = 8;
+    var num3 = 1;
+    var num4 = 1555;
+    let result = Media(num1, num2);
+    document.getElementById("media").innerHTML = result;
+    let result2 = Media (num3, num4);
+    document.getElementById("media").innerHTML = result2;
+    let resultf =  Media (result, result2);
+    document.getElementById("media").innerHTML = resultf;
+</script>
+
+
+
+</body>
+</html>

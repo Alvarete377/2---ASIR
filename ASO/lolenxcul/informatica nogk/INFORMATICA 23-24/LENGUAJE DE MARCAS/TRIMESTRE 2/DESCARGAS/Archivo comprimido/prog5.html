@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+/*
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+/*
+Pedir un sueldo, a continuación, visualizar:
+			a) Si es superior a 600.
+			b) Si es superior a 1200.
+			c) Si es superior a 1800.
+*/
+  var sueldo;
+
+  sueldo=prompt('Ingrese el sueldo:','');  
+  sueldo=parseInt(sueldo);
+  
+  Visualizar (sueldo);
+  
+  // ---------------- FUNCIONES --------------------
+  function Visualizar (sueldo){
+     if (sueldo > 600){
+         alert ('el sueldo es mayor de 600');
+         if (sueldo > 1200){
+             alert ('el sueldo es mayor de 1200');
+             if (sueldo > 1800){
+                  alert ('el sueldo es mayor de 1800');
+             }
+         }
+     }
+
+}
+  
+</script>
+
+</body>
+</html>

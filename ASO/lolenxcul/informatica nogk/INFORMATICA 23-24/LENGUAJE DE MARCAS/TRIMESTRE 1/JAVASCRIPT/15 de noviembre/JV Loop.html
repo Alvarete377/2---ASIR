@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For Loop</h2>
+
+<p>Guardar en un array las medias de un alumno, visualizar la media </p>
+<p id="demo"></p>
+
+<script>
+    const tabla_notas = [2,7,5,8,9,4,6];
+function Media(tab) {
+    let suma= 0;
+    for (let i = 0; 1 < tab.length; i++) {
+    suma = suma + tab [i];
+}
+    Media = suma / tab.length;
+    return Media;
+}
+
+    result = Media (tabla_notas);
+    document.getElementById("demo").innerHTML = result;
+
+</script>
+</body>
+</html>

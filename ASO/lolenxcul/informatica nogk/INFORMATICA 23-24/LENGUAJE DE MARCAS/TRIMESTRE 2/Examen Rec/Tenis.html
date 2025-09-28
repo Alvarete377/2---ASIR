@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Tenis</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Contador de Tenis</h1>
+    <table border="1">
+        <tr>
+            <th>Jugador</th>
+            <th>Puntos</th>
+            <th>Puntuación</th>
+            <th>Sets</th>
+        </tr>
+        <tr>
+            <td>Alcaraz</td>
+            <td id="alcaraz-points">0</td>
+            <td id="alcaraz-score">0</td>
+            <td id="alcaraz-sets">0</td>
+        </tr>
+        <tr>
+            <td>Djokovic</td>
+            <td id="djokovic-points">0</td>
+            <td id="djokovic-score">0</td>
+            <td id="djokovic-sets">0</td>
+        </tr>
+    </table>
+    <button id="alcaraz-point">Punto para Alcaraz</button>
+    <button id="djokovic-point">Punto para Djokovic</button>
+
+    <script>
+        $(document).ready(function() {
+            var puntos = [0, 15, 30, 40, "A"];
+            var alcarazPuntosIndex = 0;
+            var djokovicPuntosIndex = 0;
+            var alcarazScore = 0;
+            var djokovicScore = 0;
+            var alcarazSets = 0;
+            var djokovicSets = 0;
+
+            $("#alcaraz-point").click(function() {
+                alcarazScore = updateScore(alcarazScore);
+                alcarazPuntosIndex = updatePuntosIndex(alcarazPuntosIndex);
+                updateDisplay("alcaraz-score", alcarazScore);
+                updateDisplay("alcaraz-points", puntos[alcarazPuntosIndex]);
+
+                
+                if (alcarazScore === "A") {
+                    alcarazScore = 0;
+                    alcarazSets++;
+                    updateDisplay("alcaraz-sets", alcarazSets);
+                }
+
+                
+                if (alcarazSets === 6) {
+                    
+                    alcarazSets = 0;
+                    djokovicSets = 0;
+                    updateDisplay("alcaraz-sets", alcarazSets);
+                    updateDisplay("djokovic-sets", djokovicSets);
+                    alert("¡Alcaraz ha ganado el partido!");
+                }
+            });
+
+            $("#djokovic-point").click(function() {
+                djokovicScore = updateScore(djokovicScore);
+                djokovicPuntosIndex = updatePuntosIndex(djokovicPuntosIndex);
+                updateDisplay("djokovic-score", djokovicScore);
+                updateDisplay("djokovic-points", puntos[djokovicPuntosIndex]);
+
+                
+                if (djokovicScore === "A") {
+                    djokovicScore = 0;
+                    djokovicSets++;
+                    updateDisplay("djokovic-sets", djokovicSets);
+                }
+
+                
+                if (djokovicSets === 6) {
+                    
+                    alcarazSets = 0;
+                    djokovicSets = 0;
+                    updateDisplay("alcaraz-sets", alcarazSets);
+                    updateDisplay("djokovic-sets", djokovicSets);
+                    alert("¡Djokovic ha ganado el partido!");
+                }
+            });
+
+            function updateScore(score) {
+                if (score < 3) {
+                    score++;
+                } else if (score === 3) {
+                    score = "A";
+                } else if (score === "A") {
+                    score = 0;
+                }
+                return score;
+            }
+
+            function updatePuntosIndex(index) {
+                index++;
+                if (index >= puntos.length) {
+                    index = 0;
+                }
+                return index;
+            }
+
+            function updateDisplay(elementId, value) {
+                $("#" + elementId).text(value);
+            }
+        });
+    </script>
+</body>
+</html>

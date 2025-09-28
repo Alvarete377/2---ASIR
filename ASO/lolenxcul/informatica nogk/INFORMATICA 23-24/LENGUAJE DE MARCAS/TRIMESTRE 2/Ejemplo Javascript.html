@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h2>Creating an Object from a JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+
+    /*Guardar un objeto json los datos de un alumno de ciclo superior u luego visualizarlo por javascript
+    */
+
+const txt = '[{"nombre":"Amine", "edad":18, "ciudad":"Bangladesh"},{"nombre":"ErJonny", "edad":18, "ciudad":"Mesopotamia"}]'
+
+const obj = JSON.parse(txt);
+alert (obj [0]. nombre + ", " + obj[0]. edad) ;
+alert (obj [1]. nombre + ", " + obj[1]. edad) ;
+
+
+</script>
+
+</body>
+</html>

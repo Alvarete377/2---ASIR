@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For Loop</h2>
+
+<p>Guardar en un array las medias de un alumno, visualizar la media </p>
+
+<p id="mediaa"></p>
+
+Aprobados: <p id="aprobados">  </p>
+
+<script>
+    const tabla_notas = [7,8,5,3,9,2,4];
+  function Media(tab)
+  {
+    let suma = 0;
+    for (let i = 0; i < tab.length; i++) {
+           suma = suma + tab [i];
+         }
+          media = suma/tab.length;
+          return media;
+  }
+  
+/// PROGRAMA PRINCIPAL
+
+    function cuantos_aprobados (tab) 
+    {
+        let conta = 0;
+        for (let i = 0; 1 < tab.length; i++) 
+        {
+            if (tab[i] >= 5); 
+            {
+                conta += 1;
+            }
+        }
+            return conta;
+    }
+
+    result1 = Media (tabla_notas);
+    document.getElementById("mediaa").innerHTML = "La media de tus notas es " +result1;
+
+    result2 = cuantos_aprobados (tabla_notas);
+    document.getElementById("aprobados").innerHTML = "La media de tus notas es " +result2;
+
+</script>
+</body>
+</html>

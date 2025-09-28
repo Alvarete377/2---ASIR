@@ -1,0 +1,366 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{lipsum} 
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% Configuración de listings para código
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    breaklines=true,
+    backgroundcolor=\color{gray!5},
+    morekeywords={firefox, ls, cd, echo, bg, fg, jobs, kill, ps}
+}
+
+% Configuración de headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Unidad Didáctica 1 - Arranque y procesos del sistema}
+\fancyhead[R]{\small Administración de Sistemas Operativos}
+\fancyfoot[C]{\thepage}
+
+% Configuración de títulos de sección
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+
+% Información del documento
+\title{
+    \vspace{-2cm}
+    \textbf{Unidad Didáctica 1. Arranque y procesos del sistema} \\
+    \large Administración de Sistemas Operativos - 1ª Evaluación (RA 2 – CE a, b, c)
+}
+\author{Alvaro Vazquez Vazquez}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% Cabecera institucional
+\noindent
+\textbf{I.E.S. Fernando Aguilar Quignon} \\
+C/Conil de la Frontera, 3 \\
+CP 11010, Cádiz \\
+\hrule
+
+\vspace{0.5cm}
+
+% Introducción
+\begin{abstract}
+Este documento recoge las respuestas a las preguntas de la Unidad Didáctica 1 sobre arranque y procesos del sistema. Las respuestas han sido elaboradas utilizando el lenguaje técnico aprendido en clase y organizadas de manera didáctica para facilitar su estudio y comprensión.
+\end{abstract}
+
+\vspace{1cm}
+
+% Contenido principal
+\begin{enumerate}[label=\textbf{Pregunta \arabic*.},left=0pt,itemsep=1.5em]
+
+\item \textbf{Explica qué es un programa y un proceso, realizando una comparación de ambos.}
+
+\textbf{Respuesta:} Un \textbf{programa} es un conjunto de instrucciones almacenadas en un archivo ejecutable, mientras que un \textbf{proceso} es una instancia de ese programa en ejecución. El sistema operativo carga el programa en memoria y crea un proceso que incluye el código, datos y estado de ejecución.
+
+\item \textbf{¿Qué elementos contiene una imagen de proceso? Define cada uno de ellos.}
+
+\textbf{Respuesta:} La imagen de proceso contiene:
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Bloque de control de proceso (BCP):} Estructura de datos que mantiene información sobre el proceso (punteros, estado, número de proceso, etc.)
+    \item \textbf{Instrucciones del programa:} Código máquina del programa en ejecución
+    \item \textbf{Datos estáticos:} Constantes y variables inicializadas
+    \item \textbf{Pilas de usuario y kernel:} Para llamadas a funciones
+    \item \textbf{Heap o montículo:} Memoria para datos creados dinámicamente
+\end{enumerate}
+
+\item \textbf{¿Qué estructura utiliza el sistema operativo para gestionar, de forma global, los procesos que están corriendo?}
+
+\textbf{Respuesta:} El sistema operativo utiliza la \textbf{tabla de procesos del sistema}, que contiene punteros a los BCP de todos los procesos activos, permitiendo localizar rápidamente la información de cualquier proceso.
+
+\item \textbf{¿Qué elementos componen el BCP?}
+
+\textbf{Respuesta:} El Bloque de Control de Proceso contiene:
+\begin{itemize}
+    \item Puntero al siguiente proceso
+    \item Estado del proceso
+    \item Número de proceso (PID)
+    \item Contador de programa
+    \item Registros de la CPU
+    \item Espacio de direcciones
+    \item Lista de archivos abiertos
+    \item Datos de contabilidad y prioridad
+\end{itemize}
+
+\item \textbf{¿Para qué usa el sistema el CP?}
+
+\textbf{Respuesta:} El \textbf{Contador de Programa (CP)} almacena la dirección de memoria de la siguiente instrucción a ejecutar por la CPU, permitiendo que el procesador sepa qué instrucción ejecutar a continuación.
+
+\item \textbf{¿Por qué es útil almacenar el estado de los registros de la CPU?}
+
+\textbf{Respuesta:} Es esencial para los \textbf{cambios de contexto}. Cuando un proceso con mayor prioridad entra en la CPU, se debe almacenar el estado del proceso anterior para que, cuando se reanude, la CPU pueda continuar exactamente donde lo dejó.
+
+\item \textbf{¿Qué implica que un proceso corra en modo kernel? ¿Qué ocurrirá si se ocasiona un error durante dicha ejecución?}
+
+\textbf{Respuesta:} Un proceso en \textbf{modo kernel} tiene acceso sin restricciones al hardware y comparte espacio de memoria con el sistema operativo. Si ocurre un error, podría escribir en memoria crítica, causando un \textbf{kernel panic} que bloquea todo el sistema.
+
+\item \textbf{Relacionado con lo anterior, ¿cuál es el mensaje típico que muestra el sistema?}
+
+\textbf{Respuesta:} El sistema muestra un mensaje de \textbf{"Kernel panic"} seguido de información técnica sobre el error. Los drivers son procesos comunes que ejecutan en modo kernel y su fallo puede causar este problema.
+
+\item \textbf{¿Para qué sirven las llamadas a sistema?}
+
+\textbf{Respuesta:} Las \textbf{llamadas a sistema} permiten que procesos en modo usuario soliciten servicios del sistema operativo de forma segura, ya que no tienen acceso directo al hardware. El SO realiza la operación requerida en modo kernel.
+
+\item \textbf{En relación con el espacio de direcciones virtuales que puede utilizar un proceso, ¿qué diferencia existe entre el modo usuario y el modo kernel?}
+
+\textbf{Respuesta:} Los procesos en \textbf{modo kernel} comparten un espacio de direcciones con el SO, mientras que los procesos en \textbf{modo usuario} tienen espacios de direcciones privados y aislados, garantizando seguridad y estabilidad.
+
+\newpage
+
+\item \textbf{¿Qué implicaciones tiene el hecho de que un proceso se esté ejecutando en primer plano? ¿Y en segundo?}
+
+\textbf{Respuesta:}
+\begin{itemize}
+    \item \textbf{Primer plano:} El proceso ocupa la terminal y requiere interacción del usuario. Debemos esperar a que finalice para usar la terminal nuevamente.
+    \item \textbf{Segundo plano:} El proceso ejecuta sin bloquear la terminal, permitiendo seguir trabajando.
+\end{itemize}
+
+Ejemplo de ejecución en segundo plano:
+\begin{lstlisting}[language=bash]
+firefox &
+\end{lstlisting}
+
+\item \textbf{¿Qué términos anglosajones utilizamos para referirnos a los procesos que corren en primer plano? ¿Y en segundo?}
+
+\textbf{Respuesta:}
+\begin{itemize}
+    \item \textbf{Primer plano:} \textit{Foreground processes}
+    \item \textbf{Segundo plano:} \textit{Background processes}
+\end{itemize}
+
+\item \textbf{¿Qué principal diferencia existe entre un trabajo y un daemon?}
+
+\textbf{Respuesta:} Un \textbf{trabajo} está asociado a una terminal y requiere interacción del usuario, mientras que un \textbf{daemon} es un proceso desvinculado de cualquier terminal que ejecuta en segundo plano de forma permanente.
+
+\item \textbf{¿En qué plano corre un daemon? ¿Y un trabajo?}
+
+\textbf{Respuesta:} Los \textbf{daemons} ejecutan exclusivamente en segundo plano, mientras que los \textbf{trabajos} pueden ejecutar en primer o segundo plano según cómo sean iniciados.
+
+\item \textbf{¿Cómo pasamos un proceso que está corriendo en primer plano a segundo plano?}
+
+\textbf{Respuesta:} Se utiliza \texttt{Ctrl+Z} para detener el proceso y liberar la terminal, luego \texttt{bg} para reanudarlo en segundo plano:
+
+\begin{lstlisting}[language=bash]
+# Detener proceso con Ctrl+Z
+# Ver trabajos
+jobs
+# Reanudar en segundo plano (ejemplo para trabajo número 1)
+bg %1
+\end{lstlisting}
+
+\textbf{Nota:} \texttt{bg} reanuda en segundo plano, \texttt{fg} en primer plano.
+
+\item \textbf{¿Cómo se llama la señal que hemos utilizado para llevar a cabo el proceso anterior?}
+
+\textbf{Respuesta:} La señal \textbf{SIGSTOP} que envía el proceso a segundo plano y lo detiene. \texttt{Ctrl+Z} equivale a ejecutar \texttt{kill -SIGSTOP [PID]}.
+
+\item \textbf{Cuando examinamos el estado de los procesos vía terminal, ¿qué símbolo tienen los daemons en el apartado de terminal (TT)?}
+
+\textbf{Respuesta:} Los daemons muestran \textbf{?} en el campo TTY, indicando que no tienen terminal asociada.
+
+\item \textbf{¿Qué eventos principales provocan la creación de procesos?}
+
+\textbf{Respuesta:} Los eventos principales son:
+\begin{itemize}
+    \item Inicio del sistema
+    \item Ejecución de un programa por usuario
+    \item Llamada al sistema \texttt{fork()} desde proceso existente
+    \item Solicitud de servicio por proceso existente
+\end{itemize}
+
+\item \textbf{¿Qué ocurre cuando el algoritmo de planificación asociado a una CPU es de tipo apropiativo? ¿Y no apropiativo?}
+
+\textbf{Respuesta:}
+\begin{itemize}
+    \item \textbf{Apropiativo:} Permite que procesos de mayor prioridad interrumpan (cambio de contexto) procesos en ejecución.
+    \item \textbf{No apropiativo:} Un proceso mantiene la CPU hasta que finaliza voluntariamente, pudiendo formarse "convoyes" de procesos.
+\end{itemize}
+
+\item \textbf{Explica los estados relacionados con el modelo de 5 estados.}
+
+\textbf{Respuesta:} Los estados del modelo de 5 estados son:
+\begin{itemize}
+    \item \textbf{Nuevo:} Proceso recién creado, esperando admisión
+    \item \textbf{Listo:} Admitido, esperando asignación de CPU
+    \item \textbf{Ejecución:} Ejecutándose en la CPU
+    \item \textbf{Bloqueado:} Esperando evento (E/S), libera CPU
+    \item \textbf{Terminado:} Finalizado pero aún en memoria
+\end{itemize}
+
+\item \textbf{Dentro del ámbito de la gestión de procesos, ¿qué planificadores existen? ¿Cuál es su cometido?}
+
+\textbf{Respuesta:} Existen tres tipos de planificadores:
+\begin{itemize}
+    \item \textbf{Corto plazo:} Asigna CPU a procesos listos
+    \item \textbf{Medio plazo:} Gestiona swapping procesos entre memoria y disco
+    \item \textbf{Largo plazo:} Admite nuevos procesos al sistema
+\end{itemize}
+
+\item \textbf{¿Qué relación existe entre la memoria virtual y la gestión de procesos?}
+
+\textbf{Respuesta:} La memoria virtual permite que cada proceso tenga su propio espacio de direcciones, facilitando la gestión y protección entre procesos. El SO asigna memoria física según necesidad mediante paginación.
+
+\item \textbf{¿Qué estados se añaden en el modelo de 7 estados?}
+
+\textbf{Respuesta:} Se añaden \textbf{Suspendido listo} y \textbf{Suspendido bloqueado}, para procesos que han sido movidos a disco (swapping) por falta de memoria.
+
+\item \textbf{Bajo qué circunstancias y desde qué estados se alcanzan los nuevos estados?}
+
+\textbf{Respuesta:} Los estados suspendidos se alcanzan cuando el SO necesita liberar memoria:
+\begin{itemize}
+    \item De \textbf{Listo} a \textbf{Suspendido listo}
+    \item De \textbf{Bloqueado} a \textbf{Suspendido bloqueado}
+\end{itemize}
+
+\item \textbf{¿Qué dos señales del sistema están relacionadas con los anteriores estados?}
+
+\textbf{Respuesta:} Las señales \textbf{SIGSTOP} (suspender) y \textbf{SIGCONT} (reanudar) gestionan la transición entre estados activos y suspendidos.
+
+\item \textbf{Dentro de los sistemas GNU/Linux, ¿qué simbolizan los estados S, D, R y T?}
+
+\textbf{Respuesta:}
+\begin{itemize}
+    \item \textbf{S (Sleeping):} Proceso esperando evento
+    \item \textbf{D (Disk sleep):} Bloqueado esperando E/S de disco
+    \item \textbf{R (Running):} Ejecutándose o listo para ejecutar
+    \item \textbf{T (Stopped):} Detenido por señal
+\end{itemize}
+
+\item \textbf{En el caso del formato BSD, ¿qué significan los modificadores <, N, s, l y +?}
+
+\textbf{Respuesta:}
+\begin{itemize}
+    \item \textbf{<:} Proceso de alta prioridad
+    \item \textbf{N:} Proceso de baja prioridad
+    \item \textbf{s:} Líder de sesión
+    \item \textbf{+:} Proceso en primer plano
+    \item \textbf{l:} Usa páginas de memoria bloqueadas en RAM
+\end{itemize}
+
+\item \textbf{Define trabajo, tarea y proceso.}
+
+\textbf{Respuesta:}
+\begin{itemize}
+    \item \textbf{Proceso:} Instancia de programa en ejecución
+    \item \textbf{Trabajo:} Proceso iniciado desde terminal
+    \item \textbf{Tarea:} Subproceso o hilo dentro de un trabajo
+\end{itemize}
+
+\item \textbf{¿Qué relación existe entre una tarea y un trabajo?}
+
+\textbf{Respuesta:} Un trabajo se compone de múltiples tareas que se ejecutan secuencial o concurrentemente para lograr un objetivo común.
+
+\item \textbf{¿Una tarea puede ser un trabajo? ¿Y viceversa?}
+
+\textbf{Respuesta:} Una tarea no puede ser un trabajo (es una parte), pero un trabajo puede considerarse una tarea dentro de un contexto más amplio.
+
+\item \textbf{¿Por qué decimos que una tarea se puede considerar un subproceso?}
+
+\textbf{Respuesta:} Porque un trabajo (proceso) puede dividirse en múltiples tareas (subprocesos) que ejecutan concurrentemente.
+
+\item \textbf{¿Qué diferencia existe entre un trabajo y un proceso?}
+
+\textbf{Respuesta:} Todo trabajo es un proceso, pero no viceversa. Los trabajos están vinculados a terminales, mientras que otros procesos (daemons) pueden ejecutar independientemente.
+
+\item \textbf{¿Cuándo consideramos que un proceso es un trabajo?}
+
+\textbf{Respuesta:} Cuando es iniciado desde y asociado a una terminal específica.
+
+\item \textbf{En relación con las terminales, ¿qué ámbito o contexto tienen los trabajos?}
+
+\textbf{Respuesta:} Los trabajos tienen ámbito local a la terminal donde fueron iniciados. Al cerrar la terminal, normalmente se envían señales de terminación a sus trabajos.
+
+\item \textbf{¿De qué dos maneras, vía terminal, podemos revisar los trabajos?}
+
+\textbf{Respuesta:}
+\begin{itemize}
+    \item \texttt{jobs} - muestra trabajos de la terminal actual
+    \item \texttt{ps aux | grep \$USER} - muestra todos los procesos del usuario
+\end{itemize}
+
+\item \textbf{¿Qué es un hilo de ejecución?}
+
+\textbf{Respuesta:} Un \textbf{hilo} es la unidad mínima de ejecución que puede ser planificada. Comparte espacio de memoria con otros hilos del mismo proceso pero tiene su propia pila y registros.
+
+\item \textbf{¿Qué concepto está relacionado con dichos hilos?}
+
+\textbf{Respuesta:} El concepto de \textbf{programación multihilo} o \textbf{multithreading}, que permite ejecutar múltiples hilos concurrentemente dentro del mismo proceso.
+
+\item \textbf{¿Qué problema se deriva de la no existencia de programación multihilo?}
+
+\textbf{Respuesta:} Ineficiencia en aplicaciones que requieren concurrencia, ya que se necesitarían múltiples procesos (más pesados) en lugar de hilos (más ligeros).
+
+\item \textbf{¿Qué ocurre con la imagen del proceso cuando tenemos varios hilos corriendo del mismo proceso?}
+
+\textbf{Respuesta:} Los hilos comparten la misma imagen de proceso (código, datos, archivos) pero cada hilo tiene su propia pila y contexto de ejecución.
+
+\item \textbf{¿Por qué los hilos aumentan la eficiencia de la comunicación entre programas que están en ejecución?}
+
+\textbf{Respuesta:} Porque al compartir memoria, la comunicación entre hilos es más rápida que entre procesos (que requieren mecanismos IPC más lentos).
+
+\item \textbf{¿Por qué es más liviano el cambio de contexto entre dos hilos de un mismo proceso?}
+
+\textbf{Respuesta:} Porque solo se necesita cambiar pila y registros, no el espacio completo de direcciones (que es compartido).
+
+\item \textbf{Define el concepto de interrupción.}
+
+\textbf{Respuesta:} Señal asíncrona que alerta a la CPU sobre eventos externos que requieren atención inmediata.
+
+\item \textbf{Define el concepto de excepción.}
+
+\textbf{Respuesta:} Evento síncrono causado por la ejecución de instrucciones (división por cero, acceso inválido a memoria).
+
+\item \textbf{¿Cuándo se da una interrupción por software? ¿En qué consisten?}
+
+\textbf{Respuesta:} Son generadas por instrucciones específicas (como \texttt{int} en x86) para solicitar servicios del sistema operativo (llamadas al sistema).
+
+\item \textbf{¿Cuándo se da una interrupción por hardware? ¿En qué consisten?}
+
+\textbf{Respuesta:} Generadas por dispositivos hardware (teclado, disco, red) para indicar que necesitan atención del procesador.
+
+\item \textbf{¿Cuál fue la primera técnica que se implementó para las interrupciones?}
+
+\textbf{Respuesta:} El \textbf{polling} o sondeo, donde la CPU verificaba periódicamente el estado de los dispositivos.
+
+\item \textbf{¿Cómo se aplicaba la técnica anterior?}
+
+\textbf{Respuesta:} La CPU gastaba ciclos revisando registros de estado de dispositivos, resultando ineficiente para sistemas con múltiples dispositivos.
+
+\item \textbf{¿Qué ocurre con los modos de ejecución cuando se lanza una excepción por software?}
+
+\textbf{Respuesta:} Se produce un cambio de \textbf{modo usuario} a \textbf{modo kernel} para que el sistema operativo maneje la excepción de forma segura.
+
+\item \textbf{¿Por qué decimos que las excepciones son un mecanismo de protección que permite garantizar la integridad de los datos almacenados tanto en el espacio del usuario como en el espacio del kernel?}
+
+\textbf{Respuesta:} Porque detectan operaciones inválidas y permiten al SO intervenir antes de que causen daño, manteniendo el sistema estable y seguro.
+
+\item \textbf{¿Bajo qué circunstancias se produce una excepción?}
+
+\textbf{Respuesta:} Cuando ocurren condiciones excepcionales durante la ejecución: errores aritméticos, accesos inválidos a memoria, instrucciones privilegiadas en modo usuario, etc.
+
+\end{enumerate}
+
+\end{document}

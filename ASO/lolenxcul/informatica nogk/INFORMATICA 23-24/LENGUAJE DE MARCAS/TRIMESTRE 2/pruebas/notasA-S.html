@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notas Aprobadas y Suspendidas</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+
+
+    $(document).ready(function(){
+      // Array con las notas
+      var notas = [8, 4, 6, 3, 9];
+
+
+      // Función para visualizar las notas aprobadas
+      $("#Aprobadas").click(function(){  
+        $("#resultados");
+        notas.forEach(function(nota) {
+          if (nota >= 5) {
+            alert("Nota: " + nota + " - Aprobada")
+          }
+        });
+      });
+
+
+      // Función para visualizar las notas suspendidas
+      $("#Suspendidas").click(function(){  
+        $("#resultados");
+            notas.forEach(function(nota) {
+          if (nota < 5) {
+            alert("Nota: " + nota + " Suspensa")
+          }
+        });
+      });
+    });
+    
+
+  </script>
+</head>
+<body>
+
+  <button id="Aprobadas">Notas Aprobadas</button>
+  <button id="Suspendidas">Notas Suspensas</button>
+  
+  <div id="resultados"></div>
+
+</body>
+</html>

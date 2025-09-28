@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+/*
+Dado dos numeros, visualizar si son amigos o no.
+Los números amigos son dos números enteros positivos «a» y «b» tales que la suma de los divisores (aquellos valores que dividen el número en partes exactas) propios de uno es igual al otro número y viceversa. El ejemplo más conocido es el de 220 y 284.*/
+  var num, x;
+
+  a=prompt('Ingrese el primer número:','');  
+  a=parseInt(a);
+  b=prompt('Ingrese el primer segundo:','');  
+  b=parseInt(b);
+  
+  x1 = SumaDivisores (a);
+  x2 = SumaDivisores (b);
+  Visualizar (a,b,x1, x2);
+  
+  // ---------------- FUNCIONES --------------------
+  function SumaDivisores(n){
+     var i, suma = 0;
+     i = n -1;
+     while (i >= 1){
+         if (n % i == 0){
+            suma = suma + i;
+         }
+         i--;
+     }
+     return suma;
+  
+  }
+  
+  function Visualizar (num1,num2,x1, x2){
+      if (num1 == x2 && num2 == x1){
+          alert ('ambos numeros son amigos');
+      } else{
+          alert ('ambos numeros NO son amigos');
+      }
+  }
+
+
+  
+</script>
+
+</body>
+</html>

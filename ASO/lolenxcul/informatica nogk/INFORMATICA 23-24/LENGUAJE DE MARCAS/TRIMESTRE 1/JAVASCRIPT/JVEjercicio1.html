@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        let Amigos = ["Benito", "Jorge", "Antoñi"];
+        let edades = [17, 18, 19]
+        function obteneredades(nombre) {
+            let indice = Amigos.indexOf(nombre);
+            if (indice !== -1) {
+                let edad = edades [indice];
+                alert("la edad de" + nombre + " es " + edad + " años.");
+            } else {
+                alert (nombre + "no coincide con tus amigos");
+            }
+        }   
+        let nombrebuscado = prompt("Nombre de tu amigo:");
+        obteneredades(nombrebuscado)
+    </script>
+
+</body>
+</html>

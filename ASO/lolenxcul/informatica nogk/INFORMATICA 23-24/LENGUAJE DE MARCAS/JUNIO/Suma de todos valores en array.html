@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p> Dado un array con números, visualizar la suma de todos sus valores </p>
+
+<script>
+
+  //------------------ FUNCIONES--------------------------
+
+  function Proceso(result) {
+    let suma = 0;
+    for (let i = 0; i < result.length; i++) {
+      suma += result[i];
+    }
+    return suma;
+  }
+
+  function Visualizar(resultado){
+    alert(resultado);
+  }
+
+
+  //--------------- PROGRAMA PRINCIPAL-------------------
+
+  let numeros = [8, 2, 3, 7, 4];
+
+  let result = Proceso(numeros);
+  Visualizar(result);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+Almacenar en un array las notas de un alumno y visualizar las notas que esten por encima de la media 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let tab_notas = [6, 8, 7, 9, 5];
+
+        function Visualizar(tab){
+            let suma = 0;
+            for (let f = 0; f < tab.length; f++) {
+                suma = suma + tab[f];
+            }
+            let media = suma / tab.length;
+            alert (media);
+        }
+
+        //PROGRAMA PRINCIPAL
+        Visualizar (tab_notas);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+p {
+	color: red;
+}
+
+ul {
+	color: greenyellow;
+}
+
+.red{
+	background-color: bisque;
+}
+
+.black{
+	background-color: black;
+}
+
+#Blanco{
+	color: red;
+	background-color: yellow;
+}

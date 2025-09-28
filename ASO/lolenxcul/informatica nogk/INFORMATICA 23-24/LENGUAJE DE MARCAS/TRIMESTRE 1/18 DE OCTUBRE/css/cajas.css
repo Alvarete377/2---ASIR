@@ -1,0 +1,87 @@
+.bloque1 {
+    float: left;
+    background-color: #d18dcb;
+    color: black;
+    padding: 20px;
+    border: solid 4px rgb(6, 110, 6);
+    margin: 10px;
+    width: 100px;
+    height: 30px;
+ }
+
+ .bloque2 {
+    float: left;
+    background-color: #d18dcb;
+    color: black;
+    padding: 10px;
+    border: solid 4px rgb(6, 110, 6);
+    margin: 10px;
+    width: 100px;
+    height: 40px;
+ }
+
+ .bloque3 {
+   float: left;
+   background-color: #d18dcb;
+   color: black;
+   padding: 10px;
+   border: solid 4px rgb(6, 110, 6);
+   margin: 10px;
+   width: 100px;
+   height: 40px;
+ }
+
+ .azul {
+    background-color: #0e0ae0;
+    padding: 50px;
+    border: solid 3px rgb(160, 108, 11);
+    margin: 50px;
+    width: 250px;
+    height: 220px;
+ }
+
+ .amarillo {
+    background-color: #fcf700;
+    padding: 40px;
+    border: solid 3px rgb(255, 0, 0);
+    margin: 10px;
+    width: 170px;
+    height: 150px;
+ }
+
+ .azul2 {
+    background-color: #0e0ae0;
+    padding: 50px;
+    border: solid 3px rgb(160, 108, 11);
+    margin: 50px;
+    width: 250px;
+    height: 220px;
+ }
+
+ .amarillo2 {
+    background-color: #fcf700;
+    padding: 30px;
+    border: solid 3px rgb(255, 0, 0);
+    margin: 20px;
+    width: 150px;
+    height: 120px;
+ }
+
+
+ .azul3 {
+   background-color: #0e0ae0;
+   padding: 50px;
+   border: solid 3px rgb(160, 108, 11);
+   margin: 50px;
+   width: 250px;
+   height: 220px;
+ }
+
+.amarillo3 {
+   background-color: #fcf700;
+   padding: 30px;
+   border: solid 3px rgb(255, 0, 0);
+   margin: 20px;
+   width: 150px;
+   height: 120px;
+ }

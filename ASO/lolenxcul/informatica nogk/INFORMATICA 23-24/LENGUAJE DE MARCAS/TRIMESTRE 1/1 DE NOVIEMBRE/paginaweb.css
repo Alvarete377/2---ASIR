@@ -1,0 +1,88 @@
+*{
+	margin: 0 auto;
+}
+header div#buscador{
+	float: right;
+}
+
+
+
+header span div#logotipo{
+	float: left;
+	
+}
+
+header div#lorem {
+	clear: both;
+	background-color: darkblue;
+	color: white;
+	margin:10px;
+	width: 80%;
+}
+
+aside div#izquierdo {
+	background-color: lightgrey;
+	width: 15%;
+	float:left;
+	left:20px;
+	color: grey;
+	margin: 10px;
+
+}
+aside div#izquierdo2 {
+	clear:both;
+	background-color: lightgreen;
+	width: 15%;
+	float:left;
+	margin: 10px;
+
+}
+section div#centro{
+
+
+}
+section img#imagen1 {
+
+}
+
+section aside div#derecha {
+	float: right;
+	buttom: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

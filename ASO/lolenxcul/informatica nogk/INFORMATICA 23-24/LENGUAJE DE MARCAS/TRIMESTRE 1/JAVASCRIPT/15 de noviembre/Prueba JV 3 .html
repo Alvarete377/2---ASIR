@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+
+<p>NOMBRES</p>
+
+<p id="resultado"></p>  
+<script>
+function Fun1(nom, ape) {
+   let nombre_completo = nom + " " + ape;
+   return nombre_completo
+}
+let nombre = "Jose";
+let apellidos = "Lopez Garcia";
+document.getElementById("resultado").innerHTML = "Hola "+Fun1(nombre, apellidos);
+
+</script>
+
+</body>
+</html>

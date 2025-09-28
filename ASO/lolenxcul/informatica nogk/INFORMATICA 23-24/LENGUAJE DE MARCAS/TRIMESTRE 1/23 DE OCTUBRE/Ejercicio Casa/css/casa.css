@@ -1,0 +1,43 @@
+div#b1 {
+    width: 550px;
+    height: 100px;
+    background-color: red;
+    border: 5px black solid;
+}
+
+div#b2 {
+    left: 40px;
+    width: 450px;
+    height: 400px;
+    background-color: gray;
+    border: 5px black solid;
+}
+
+div#b3 {
+    position: relative;
+    left: 120px;
+    top: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+div#b4 {
+    position: relative;
+    right: 120px;
+    top: 80px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+div#b5 {
+    position: relative;
+    top: 47px;
+    width: 100px;
+    height: 150px;
+    background-color: green;
+    border: 2px black solid;
+}
+
+* {margin: 0 auto;}

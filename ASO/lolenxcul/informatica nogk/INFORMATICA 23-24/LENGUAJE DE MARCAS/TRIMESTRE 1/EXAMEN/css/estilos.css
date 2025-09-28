@@ -1,0 +1,146 @@
+*{
+  margin: 0 auto;
+  }
+main{
+  width: 80%;
+  border-color:  orange;
+  border: 2px orange solid;
+  
+  }
+
+header {
+  background-color: yellow;
+  width: 100%;
+  height: 170px;
+}
+header img{
+  position: absolute;
+  top: 0px;
+}
+
+header  h2, h3, ul{
+  text-align: center;
+}
+header ul{
+  margin-top: 80px;
+}
+header h3{
+  margin-top: 12px;
+}
+
+header ul li{
+  list-style: none;
+  display: inline-block;
+  background-color: darkblue;
+  color: white;
+  width: 70px;
+  padding: 5px;
+}
+
+aside#lateral_izquierdo{
+  float: left;
+  width: 15%;
+  
+}
+section{
+  float: left;
+  width: 50%;
+  
+}
+aside#lateral_derecho{
+  float: left;
+  width: 8%;
+  margin-left: 20px;
+  padding-top: 145px;
+
+}
+aside#lateral_izquierdo article{
+  background-color: lightgreen;
+  border-color:  brown;
+  border: 1px brown solid;
+  margin-left: 5px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+aside#lateral_izquierdo article#capitulo1 h3{
+    margin-bottom: 10px;
+}
+
+aside#lateral_izquierdo article#autor{
+  margin-top: 5px;
+}
+aside article a{
+  display: block;
+}
+aside article img, a{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+aside article#autor a{
+  text-align: left;
+  font-size: 10px
+}
+article.bloque_externo h2 {
+  
+  background-color: orange;
+  
+
+}
+section{
+   padding-left: 80px;
+}
+article.bloque_externo {
+  width: 100%;
+  float:left;
+  border-width: 5px;
+  border-style: solid;
+     border-color: orange;
+     background-color: yellow;
+   margin: 10px;
+   text-align: left;
+
+
+
+}
+article.bloque_externo h2 {
+      text-align: left;
+  }
+article div.bloque_interno {
+  width: 40%;
+  font-size: 12px;
+  float:left;
+  border-width: 5px;
+  border-style: solid;
+     border-color: red;
+     
+  margin: 25px;
+
+}
+article div.bloque_interno p{
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+background-color:  orange;
+  }
+
+section article div.bloque_interno h2 {
+  text-align: left;
+  color:white;
+  font-size: 25px;
+  font-weight: bold;
+background-color:  red;
+
+}
+.no_float{
+  clear:both;
+}
+footer {
+  width: 100%;
+  background-color: lightblue;
+  height: 60px;
+  padding-top: 5px;
+  text-align: center;
+
+}

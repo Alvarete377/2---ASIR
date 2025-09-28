@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+/*
+Se pide dos números a y b. A continuación visualizar si su suma es positiva, cero o negativa. 
+
+*/
+  var num1, num2, suma;
+
+  num1=prompt('Ingrese el primer número:','');  
+  num1=parseInt(num1);
+  num2=prompt('Ingrese el primer segundo:','');  
+  num2=parseInt(num2);
+  
+  suma = Suma (num1, num2);
+  Visualizar (suma);
+  
+  // ---------------- FUNCIONES --------------------
+  function Suma (n1, n2){
+      suma = n1 + n2;
+      return suma;
+  }
+ 
+  
+  function Visualizar (suma){
+     if (suma < 0){
+         alert ('La suma es negativa');
+     }else {
+         alert ('la suma es positiva');
+         if (suma == 0){
+             alert ('la suma es cero');
+         }
+     }
+  }
+
+
+  
+</script>
+
+</body>
+</html>

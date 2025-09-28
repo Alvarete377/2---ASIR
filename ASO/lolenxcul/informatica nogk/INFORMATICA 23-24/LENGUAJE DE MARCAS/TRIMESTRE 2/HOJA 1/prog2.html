@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+/*
+Dado un numero, obtener  la suma de los divisores de ese numero
+*/
+  var num, x;
+
+  num=prompt('Ingrese el número:','');  
+  num=parseInt(num);
+  
+  x = Divisores (num);
+  Visualizar (x);
+  
+  // ---------------- FUNCIONES --------------------
+  function Divisores(n){
+     var i, suma = 0;
+     i = n -1;
+     while (i >= 1){
+         if (n % i == 0){
+            suma = suma + i;
+         }
+         i--;
+     }
+     return suma;
+  
+  }
+  
+  function Visualizar (resul){
+      alert ("la suma es:"+resul);
+  }
+
+
+  
+</script>
+
+</body>
+</html>

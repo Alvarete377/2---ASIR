@@ -1,0 +1,18 @@
+div#b1 {
+    position: fixed;
+    left: 150px;
+    width: 150px;
+    background-color: red;
+}
+
+div#b2 {
+    width: 150px;
+    height: 3000px;
+    background-color: yellow;
+}
+
+div#b3 {
+    width: 137px;
+    margin: 10px;
+    background-color: red;
+}

@@ -1,0 +1,32 @@
+div#caja1 {
+    float: left;
+    width: 300px;
+    margin: 10px;
+    background-color: bisque;
+}
+
+div#caja2 {
+    float: left;
+    width: 300px;
+    margin: 10px;
+    background-color: bisque;
+}
+
+div#caja3 {
+    float: left;
+    width: 300px;
+    margin: 10px;
+    background-color: bisque;
+}
+
+div#caja1 p{
+    color: brown;
+}
+
+div#caja2 p{
+    color: brown;
+}
+
+div#caja3 p{
+    color: brown;
+}

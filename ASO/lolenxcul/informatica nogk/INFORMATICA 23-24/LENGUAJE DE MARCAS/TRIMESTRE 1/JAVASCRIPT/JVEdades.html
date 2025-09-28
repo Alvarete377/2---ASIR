@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+Resultado <p id="salida"></p>
+    <script>
+            let vec = [17, 18, 19];
+            function Media(tab) {
+                let acum = 0;
+                for (let f = 0; f < vec.length; f++) {
+                    acum += tab(f);
+                }
+                med = acum / vec.length;
+                return med;
+            }
+            resul = Media(vec);
+            document.getElementById('Salida').innerHTML=resul;
+    </script>      
+
+</body>
+
+</html>

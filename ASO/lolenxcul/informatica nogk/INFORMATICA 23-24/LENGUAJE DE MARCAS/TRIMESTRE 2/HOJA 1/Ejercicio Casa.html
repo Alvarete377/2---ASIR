@@ -1,0 +1,38 @@
+<html>
+<body>
+    <script>
+
+        /*Declarar un array con varias notas
+        Visualizar la media del array
+        Visualizar si esta aprobado o no
+        Obtener un seggundo array que contenga solo las notas aprobadas y Visualizar el array
+        Subirlo a GitHub
+        */
+
+        let tab_notas = [6, 8, 7, 9, 5];
+
+
+//---------FUNCIONES----------//
+        function Media(tab){
+            let suma = 0;
+            for (let f = 0; f < tab.length; f++) {
+                suma = suma + tab[f];
+            }
+            let media = suma / tab.length;
+            return media;
+        }
+
+        function Visualizar(dato){
+            alert ("media de las notas: " +dato)
+        }
+
+//----------PROGRAMA PRINCIPAL------------//
+        let resultado_media = Media (tab_notas)
+        Visualizar (resultado_media);
+
+
+
+
+    </script>
+</body>
+</html>

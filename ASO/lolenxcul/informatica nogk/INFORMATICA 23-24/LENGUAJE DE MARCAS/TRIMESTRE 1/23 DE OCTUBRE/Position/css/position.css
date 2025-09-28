@@ -1,0 +1,19 @@
+div#b1 {
+    width: 300px;
+    margin: 10px;
+    background-color: red;
+}
+
+div#b2 {
+    position: relative;
+    width: 210px;
+    left: 100px;
+    top: 1px;
+    background-color: yellow;
+}
+
+div#b3 {
+    width: 300px;
+    margin: 10px;
+    background-color: red;
+}

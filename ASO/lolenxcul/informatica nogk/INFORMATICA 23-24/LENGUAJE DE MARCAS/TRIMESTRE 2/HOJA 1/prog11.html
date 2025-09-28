@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+/*
+Dados 4 valores (num1, num2, num3, num4) visualizar que media es mayor: la formada por los números num1 y num2 o la formada por los valores num3 y num4.
+*/
+  var num1, num2, num3, num4;
+
+  num1=prompt('Ingrese el primer número:','');  
+  num1=parseInt(num1);
+  num2=prompt('Ingrese el segundo número:','');  
+  num2=parseInt(num2);
+  num3=prompt('Ingrese el tercer número:','');  
+  num3=parseInt(num3);
+  num4=prompt('Ingrese el cuarto número:','');  
+  num4=parseInt(num4);
+  
+  media1 = Media(num1, num2);
+  media2 = Media (num3, num4);
+  Visualizar (media1, media2);
+  
+  // ---------------- FUNCIONES --------------------
+  function Media (a, b){
+      var suma, media;
+      suma = a + b;
+      media = suma / 2;
+      return media;
+  }
+  
+  function Visualizar (media1, media2){
+      if (media1 > media2){
+          alert ('la media de los dos primeros numeros es mayor');
+      } else {
+          if (media2 > media1){
+              alert ('la media de los dos ultimos numeros es mayor');
+          } else {
+              alert ('SON IGUALES');
+          }
+      }
+  }
+
+
+  
+</script>
+
+</body>
+</html>

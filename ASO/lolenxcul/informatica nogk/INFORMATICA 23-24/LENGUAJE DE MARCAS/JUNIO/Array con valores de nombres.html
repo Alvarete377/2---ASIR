@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p> Dado un array, en los que los valores son nombres. Cada numero va a tener
+    un nombre (numerouno)....., el array se llama objeto </p>
+
+<script>
+
+  //------------------ FUNCIONES--------------------------
+
+  function Proceso(objeto) {
+    suma = 0 
+    for (let clave in objeto) {
+      suma += objeto[clave];
+    }
+    return suma;
+  }
+
+  function Visualizar(resultado){
+    alert(resultado);
+  }
+
+  //--------------- PROGRAMA PRINCIPAL-------------------
+
+  let objeto = {numerouno:1, numerodos:2, numerotres:3, numerocuatro:4, numerocinco:5}
+
+  let result = Proceso(objeto);
+  Visualizar(result);
+
+</script>
+</body>
+</html>

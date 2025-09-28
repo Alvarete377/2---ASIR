@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let valor;
+            valor = parseInt(prompt('Ingrese un valor entre 0 y 999:', ''));
+            document.write('El valor ' + valor + ' tiene ');
+            
+            while (valor != 0) { 
+
+                if (valor < 10) {
+                    document.write('Tiene 1 digitos');
+                } else {
+                if (valor < 100) {
+                    document.write('Tiene 2 digitos');
+                } else {
+                    document.write('Tiene 3 digitos');
+                }
+            }
+            document.write('<br>');
+            }
+    </script>
+
+</body>
+
+</html>

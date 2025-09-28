@@ -1,0 +1,13 @@
+button:hover {
+    background-color: yellow;
+    text-decoration: none;
+    color: #fff;
+    }
+
+#boton1 {
+    float: left;
+    }
+
+#boton2 {
+    float: right;
+}

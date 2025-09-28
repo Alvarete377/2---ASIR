@@ -1,0 +1,148 @@
+*{
+	font-family: 'Times New Roman', Times, serif;
+	margin: 0 auto;
+}
+
+main{
+    width: 40%;
+	background-color: white;
+	height: 1500px;
+}
+
+
+header.centro{
+    background-image: url("../imagenes/cabecera.jpg");
+    width: 100%;
+    height: 100px;
+    background-size: contain;
+    position: relative;
+}
+
+h1.titulo{
+    color: white;
+    position: relative;
+    margin-left: 20px;
+    top: 40px;
+}
+
+div.cabecera{
+    top: 55px;
+    position: relative;
+    margin-left: 5px;
+    color: antiquewhite;
+    background-color: rgb(33, 33, 83);
+    height: 25px;
+    width: 752px;
+
+}
+
+.inicio{
+	margin-left: 10px;
+	position: relative;
+    height: 40px;
+    top: 5px;
+}
+
+.blog{
+	margin-left: 20px;
+	position: relative;
+    height: 40px;
+    top: 5px;
+}
+
+.sobre{
+	margin-left: 20px;
+	position: relative;
+    height: 40px;
+    top: 5px;
+}
+
+.fotos{
+	margin-left: 20px;
+	position: relative;
+    height: 40px;
+    top: 5px;
+}
+
+.portafolios{
+	margin-left: 20px;
+	position: relative;
+    height: 40px;
+    top: 5px;
+}
+
+.contacto{
+	margin-left: 20px;
+	position: relative;
+    height: 40px;
+    top: 5px;
+}
+
+.enlaces{
+	margin-left: 20px;
+	position: relative;
+    height: 40px;
+    top: 5px;
+}
+
+a:hover{
+    background-color: white;
+    color: orangered;
+}
+
+div.primero{
+    background-image: url("../imagenes/fondo_articulo.jpg");
+    position: relative;
+    top: 10px;
+    margin-left: 240px;
+    width: 67%;
+    height: 180px;
+    padding: 10px;
+}
+
+div.titulotex{
+    color: rgba(0, 0, 0, 0.685);
+    background-color: rgb(186, 212, 230);
+    width: 520px;
+    position: relative;
+    top: 10px;
+    margin-right: 80px;
+}
+
+div.texto1{
+    position: relative;
+    top: 20px;
+}
+
+.dias{
+    position: relative;
+    top: 0px;
+    margin-right: 20px;
+}
+
+.diseño{
+    position: relative;
+    top: 0px;
+    margin-right: 20px;
+}
+
+.apellidos{
+    position: relative;
+    top: 0px;
+    margin-right: 30px;
+}
+
+aside.izquierda{
+    background-color: rgb(124, 205, 230);
+    margin-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 28%;
+    position: relative;
+    top: 50px;
+  }
+
+  div.primeraside{
+    background-color: rgb(186, 220, 252);
+    
+  }

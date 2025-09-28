@@ -1,0 +1,37 @@
+<html>
+<body>
+    <script>
+/*
+Dados tres valores, calcular la media de los tres valores.
+*/ 
+
+    num1=prompt('Ingrese el primer número:','');  
+    num1=parseInt(num1);
+    num2=prompt('Ingrese el segundo número:','');  
+    num2=parseInt(num2);
+    num3=prompt('Ingrese el tercer número:','');  
+    num3=parseInt(num3);
+
+        media = Media(num1, num2, num3);
+
+        Visualizar (media);
+
+//----------FUNCIONES---------//
+        function Media (a, b, c){
+        var suma, media;
+        suma = a + b + c;
+        media = suma / 3;
+        return media;
+        }
+
+//----------PROGRAMA PRINCIPAL----------//
+        function Visualizar (media){
+            alert(media);
+        }
+
+    </script>
+
+</body>
+</html>
+
+

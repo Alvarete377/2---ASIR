@@ -1,0 +1,32 @@
+JSON
+
+{
+  "nombre":"Jonh Doe",
+  "profesion":"Programador",
+  "edad":25,
+  "lenguajes":["PHP","Javascript","Dart"],
+  "disponibilidadParaViajar":true,
+  "rangoProfesional": {
+      "aniosDeExperiencia": 12,
+      "nivel": "Senior"
+  }
+}
+
+
+PASAMOS DE JASON A XML
+
+<?xml version="1.0" encoding="UTF-8" ?>
+ <root>
+     <nombre>Jonh Doe</nombre>
+     <profesion>Programador</profesion>
+     <edad>25</edad>
+     <lenguajes>PHP</lenguajes>
+     <lenguajes>Javascript</lenguajes>
+     <lenguajes>Dart</lenguajes>
+     <disponibilidadParaViajar>true</disponibilidadParaViajar>
+     <rangoProfesional>
+         <aniosDeExperiencia>12</aniosDeExperiencia>
+         <nivel>Senior</nivel>
+     </rangoProfesional>
+ </root>
+
