@@ -104,7 +104,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
 
     \newpage
 
-    \item ¿Qué implicaciones tiene el hecho de que un proceso se esté ejecutando en primer plano? ¿Y en segundo? \\
+    \item ¿Qué implicaciones tiene el hecho de que un proceso se esté ejecutando en primer plano? ¿Y en segundo? \\ % Actividad 12
     \textbf{Respuesta:} 
     \begin{itemize}
         \item Los procesos que se ejecutan en primer plano son aquellos que necesitan que un usuario los inicie o interactue con ellos. Por ejemplo, si hemos iniciado el proceso desde la terminal, este la va a ocupar, y vamos a tener que esperar a que finalice para poder iniciar uno nuevo.
@@ -127,10 +127,14 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     \item ¿Qué principal diferencia existe entre un trabajo y un daemon? \\ % Actividad 13
     \textbf{Respuesta:} 
     
+    Todos los daemons son procesos que se ejecutan en segundo plano, pero no todos los procesos en segundo plano son daemons. Un daemon es un proceso que se ejecuta en segundo plano y que no está asociado a una terminal o sesión de usuario específica. Los daemons suelen iniciarse durante el arranque del sistema y continúan ejecutándose hasta que el sistema se apaga. Estos procesos suelen encargarse de tareas del sistema, como la gestión de servicios de red, la impresión, la programación de tareas, entre otros.
+
 
     \item ¿En qué plano corre un daemon? ¿Y un trabajo? \\ % Actividad 14
     \textbf{Respuesta:} 
     
+    Un daemon corre en segundo plano, mientras que un trabajo puede correr en primer o segundo plano. Un trabajo es cualquier programa que ejecutemos vinculado a una terminal de forma interactiva sin desasociarse de la misma. Este trabajo se compondrá de una serie de tareas. 
+
 
     \item ¿Cómo pasamos un proceso que está corriendo en primer plano a segundo plano? \\ % Actividad 15
     \textbf{Respuesta:} 
@@ -157,7 +161,12 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     \item ¿Qué eventos principales provocan la creación de procesos? \\
     \textbf{Respuesta:}
 
-
+    \begin{itemize}
+        \item Arranque del sistema.
+        \item Ejecucion de un proceso, llamada para creacion de otro proceso.
+        \item Peticion de un usuario.
+        \item Inicio de trabajo por lotes.
+    \end{itemize}
 
     \item ¿Qué ocurre cuando el algoritmo de planificación asociado a una CPU es de tipo apropiativo? ¿Y no apropiativo? \\
     \textbf{Respuesta:}
@@ -201,9 +210,9 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
 
     \item ¿Qué relación existe entre la memoria virtual y la gestión de procesos? \\ % Actividad 22
     \textbf{Respuesta:} 
-    
-    
 
+    La memoria virtual permite que los procesos utilicen más memoria de la que físicamente está disponible en el sistema. Esto es útil cuando se ejecutan múltiples procesos simultáneamente, ya que cada uno puede requerir una cantidad significativa de memoria. La memoria virtual ayuda a gestionar estos requisitos de memoria al permitir que los procesos utilicen espacio en disco como si fuera memoria RAM, lo que mejora la eficiencia y la capacidad del sistema para manejar múltiples procesos. 
+    
     \item ¿Qué estados se añaden en el modelo de 7 estados? \\ % Actividad 23
     \textbf{Respuesta:}
     
@@ -212,11 +221,23 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     \item Bajo qué circunstancias y desde qué estados se alcanzan los nuevos estados? \\ % Actividad 24
     \textbf{Respuesta:} 
     
+    \begin{itemize}
+        
+    \item El estado de suspendido listo se alcanza desde el estado de listo, cuando el sistema operativo decide liberar memoria, moviendo el proceso a memoria secundaria (swap). El proceso permanece en este estado hasta que se le vuelva a asignar memoria principal y pueda volver al estado de listo.
+
+    \item El estado de suspendido bloqueado se alcanza desde el estado de bloqueado, cuando el sistema operativo decide liberar memoria, moviendo el proceso a memoria secundaria (swap). El proceso permanece en este estado hasta que se le vuelva a asignar memoria principal y pueda volver al estado de bloqueado.
+
+    \end{itemize}
 
 
     \item ¿Qué dos señales del sistema están relacionadas con los anteriores estados? \\ % Actividad 25
     \textbf{Respuesta:} 
     
+    \begin{itemize}
+        \item SIGSTOP: Detiene el proceso, enviándolo a segundo plano.
+        \item SIGTSTP: Detiene el proceso, enviándolo a segundo plano y liberando la terminal.
+    \end{itemize}
+
 
     \item Dentro de los sistemas GNU/Linux, ¿qué simbolizan los estados S, D, R y T? \\ % Actividad 26
     \textbf{Respuesta:} 
@@ -247,6 +268,8 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
 
     Estas tareas son consideradas como una subparte de un trabajo, combinando varias tareas podremos completar un trabajo determinado. En este caso podríamos decir que una tarea es un subproceso o hilo de ejecución de un trabajo.
 
+    Un proceso es un programa en ejecucion, que el sistema operativo carga en memoria para que pueda ser ejecutado por la CPU. Un proceso puede componerse de varias tareas o subprocesos, y a su vez un trabajo se compone de varias tareas.
+
 
     \item ¿Qué relación existe entre una tarea y un trabajo? \\
     \textbf{Respuesta:} 
@@ -256,7 +279,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
 
 
 
-    \item ¿Una tarea puede ser un trabajo? ¿Y viceversa? \\
+    \item ¿Una tarea puede ser un trabajo? ¿Y viceversa? \\ % Actividad 33
     \textbf{Respuesta:} 
 
 
@@ -284,7 +307,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     \item En relación con las terminales, ¿qué ámbito o contexto tienen los trabajos? \\ % Actividad 34
     \textbf{Respuesta:} 
 
-
+    Los trabajos tienen un ámbito o contexto de usuario, ya que son iniciados por un usuario de forma interactiva. Por tanto, los trabajos no pueden ser iniciados por el sistema operativo de forma automática, como si ocurre con los daemons.
     
 
     \item ¿De qué dos maneras, vía terminal, podemos revisar los trabajos? \\
@@ -301,12 +324,12 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     
     Un hilo de ejecución es la unidad más pequeña de procesamiento que puede ser programada por un sistema operativo. Es una secuencia de instrucciones dentro de un proceso que puede ejecutarse de manera independiente. Un proceso puede contener múltiples hilos, los cuales comparten el mismo espacio de direcciones y recursos del proceso padre, pero cada hilo tiene su propio contador de programa, pila y registros.
 
-    \item ¿Qué concepto está relacionado con dichos hilos? \\
+    \item ¿Qué concepto está relacionado con dichos hilos? \\ % Actividad 37
     \textbf{Respuesta:} 
     
 
 
-    \item ¿Qué problema se deriva de la no existencia de programación multihilo? \\
+    \item ¿Qué problema se deriva de la no existencia de programación multihilo? \\ % Actividad 38
     \textbf{Respuesta:} 
     
 
