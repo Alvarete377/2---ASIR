@@ -48,7 +48,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
 
 \begin{enumerate}[label=\textbf{Pregunta \arabic*.}]
     \item Explica qué es un programa y un proceso, realizando una comparación de ambos. \\
-    \textbf{Respuesta:} Un proceso es un programa en ejecucion, que el sistema operativo carga 
+    \textbf{Respuesta:} Un proceso es un programa en ejecucion, que el sistema operativo carga y gestiona en memoria para que la CPU pueda ejecutarlo. Un programa es un conjunto de instrucciones escritas en un lenguaje de programación que realiza una tarea específica cuando se ejecuta. Un programa es un archivo estático almacenado en el disco, mientras que un proceso es una instancia dinámica de ese programa en ejecución. Un programa puede tener múltiples procesos asociados, cada uno con su propio estado y contexto de ejecución.
 
     \item ¿Qué elementos contiene una imagen de proceso? Define cada uno de ellos. \\
     \textbf{Respuesta:} 
@@ -59,11 +59,11 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
         \item Pilas de usuario y kernel (llamada a funciones.)
         \item Heap o monticulo (datos creados de forma dinamica)
     \end{enumerate}
-
+    \newpage
     \item ¿Qué estructura utiliza el sistema operativo para gestionar, de forma global, los procesos que están corriendo? \\
     \textbf{Respuesta:} % Actividad 3
     Con la tabla de procesos del sistema el SO tiene una estructura que permite localizar el bloque de control de un determinado proceso revisando el puntero en la tabla.
-    \newpage
+    
     \item ¿Qué elementos componen el BCP? \\
     \textbf{Respuesta:} % Actividad 4
     La estructura del BCP contiene:
@@ -78,33 +78,33 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
         \item Datos de contabilidad
     \end{enumerate}
 
-    \item ¿Para qué usa el sistema el CP? \\
+    \item ¿Para qué usa el sistema el CP? \\ % Actividad 5
     \textbf{Respuesta:} 
     El CP o contador de programa almacena la direccion de memoria de la siguiente instruccion a ejecutar por la CPU
 
-    \item ¿Por qué es útil almacenar el estado de los registros de la CPU? \\
+    \item ¿Por qué es útil almacenar el estado de los registros de la CPU? \\ % Actividad 6
     \textbf{Respuesta:} 
     Cuando un proceso con mayor prioridad entra en la CPU "cambio de contexto" se debe almacenar el estado del proceso anterior para que, cuando se reanude su ejecucion, la CPU puede continuar exactamente por donde lo dejo.
 
-    \item ¿Qué implica que un proceso corra en modo kernel? ¿Qué ocurrirá si se ocasiona un error durante dicha ejecución? \\
+    \item ¿Qué implica que un proceso corra en modo kernel? ¿Qué ocurrirá si se ocasiona un error durante dicha ejecución? \\ % Actividad 7
     \textbf{Respuesta:} 
     Cuando un proceso corre en modo kernel, significa que tiene acceso sin restricciones al hardware, en especial a la memoria principal (RAM). Todo codigo que se ejecute en modo kernel compartira un unico espacio de memoria. Si ocurre algun error durante dicha ejecucion, el proceso podria escribir en una zona de memoria critica o erronea, bloqueando el sistema (kernel panic)
 
-    \item Relacionado con lo anterior, ¿cuál es el mensaje típico que muestra el sistema? \\
+    \item Relacionado con lo anterior, ¿cuál es el mensaje típico que muestra el sistema? \\ % Actividad 8
     \textbf{Respuesta:} 
     Si un driver (proceso que es comun que corra en modo kernel) se bloquea, bloquearia todo el sistema, causando un kernel panic.
 
-    \item ¿Para qué sirven las llamadas a sistema? \\
+    \item ¿Para qué sirven las llamadas a sistema? \\ % Actividad 9
     \textbf{Respuesta:} 
     Los procesos que se ejecutan en modo usuario, no tiene acceso directo al hardware, disponen de un subconjunto de instrucciones del numero total de instrucciones que ofrece la CPU. Por ello, este modo de ejecucion cuando requiera algun recurso hardware, necesitara hacer una \textbf{llamada a sistema}, que le permite solicitar al sistema operativo la operación requerida de forma segura
-
-    \item En relación con el espacio de direcciones virtuales que puede utilizar un proceso, ¿qué diferencia existe entre el modo usuario y el modo kernel? \\
+    \newpage
+    \item En relación con el espacio de direcciones virtuales que puede utilizar un proceso, ¿qué diferencia existe entre el modo usuario y el modo kernel? \\ % Actividad 10
     \textbf{Respuesta:} 
     Los procesos que se ejecutan en modo kernel tienen acceso a un espacio de direcciones compartido con el sistema operativo y otros procesos en modo kernel, mientras que los procesos que se ejecutan en modo usuario tienen un espacio de direcciones privado aislado de otros procesos y del kernel, lo que garantiza seguridad y estabilidad del sistema.
 
-    \newpage
+    
 
-    \item ¿Qué implicaciones tiene el hecho de que un proceso se esté ejecutando en primer plano? ¿Y en segundo? \\ % Actividad 12
+    \item ¿Qué implicaciones tiene el hecho de que un proceso se esté ejecutando en primer plano? ¿Y en segundo? \\ % Actividad 11
     \textbf{Respuesta:} 
     \begin{itemize}
         \item Los procesos que se ejecutan en primer plano son aquellos que necesitan que un usuario los inicie o interactue con ellos. Por ejemplo, si hemos iniciado el proceso desde la terminal, este la va a ocupar, y vamos a tener que esperar a que finalice para poder iniciar uno nuevo.
@@ -117,7 +117,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
 \end{lstlisting}
 
 
-    \item ¿Qué términos anglosajones utilizamos para referirnos a los procesos que corren en primer plano? ¿Y en segundo? \\
+    \item ¿Qué términos anglosajones utilizamos para referirnos a los procesos que corren en primer plano? ¿Y en segundo? \\ % Actividad 12
     \textbf{Respuesta:} 
     \begin{itemize}
         \item Los procesos en primer plano se denominan foreground procesos
@@ -134,7 +134,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     \textbf{Respuesta:} 
     
     Un daemon corre en segundo plano, mientras que un trabajo puede correr en primer o segundo plano. Un trabajo es cualquier programa que ejecutemos vinculado a una terminal de forma interactiva sin desasociarse de la misma. Este trabajo se compondrá de una serie de tareas. 
-
+    \newpage
 
     \item ¿Cómo pasamos un proceso que está corriendo en primer plano a segundo plano? \\ % Actividad 15
     \textbf{Respuesta:} 
@@ -151,14 +151,14 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
 
 
 
-    \item Cuando examinamos el estado de los procesos vía terminal, ¿qué símbolo tienen los daemons en el apartado de terminal (TT)? \\
+    \item Cuando examinamos el estado de los procesos vía terminal, ¿qué símbolo tienen los daemons en el apartado de terminal (TT)? \\ % Actividad 17
     \textbf{Respuesta:}
 
     Tienen el símbolo de interrogación, quiere decir que no tienen asociada ninguna terminal.
 
 
 
-    \item ¿Qué eventos principales provocan la creación de procesos? \\
+    \item ¿Qué eventos principales provocan la creación de procesos? \\ % Actividad 18
     \textbf{Respuesta:}
 
     \begin{itemize}
@@ -168,7 +168,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
         \item Inicio de trabajo por lotes.
     \end{itemize}
 
-    \item ¿Qué ocurre cuando el algoritmo de planificación asociado a una CPU es de tipo apropiativo? ¿Y no apropiativo? \\
+    \item ¿Qué ocurre cuando el algoritmo de planificación asociado a una CPU es de tipo apropiativo? ¿Y no apropiativo? \\ % Actividad 19
     \textbf{Respuesta:}
 
     \begin{itemize}
@@ -178,7 +178,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     \item En cambio los algoritmos de tipo no asociativos no permiten que haya un cambio de contexto hasta que el proceso que haya empezado a ejecutarse no haya terminado. Esto a veces no es lo conveniente debido a que se pueden formar convoyes de procesos.
 
     \end{itemize}
-
+    \newpage
 
     \item Explica los estados relacionados con el modelo de 5 estados. \\ % Actividad 20
     \textbf{Respuesta:}
@@ -217,7 +217,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     \textbf{Respuesta:}
     
     Se añaden los estados de Suspendido listo y Suspendido bloqueado.
-
+    \newpage
     \item Bajo qué circunstancias y desde qué estados se alcanzan los nuevos estados? \\ % Actividad 24
     \textbf{Respuesta:} 
     
@@ -250,7 +250,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     \end{itemize}
 
 
-    \item En el caso del formato BSD, ¿qué significan los modificadores <, N, s, l y +? \\
+    \item En el caso del formato BSD, ¿qué significan los modificadores <, N, s, l y +? \\ % Actividad 27
     \textbf{Respuesta:} 
     
     \begin{itemize}
@@ -260,8 +260,8 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
         \item + : Proceso en primer plano
         \item l : Proceso que está utilizando páginas de memoria bloqueadas en RAM.
     \end{itemize}
-
-    \item Define trabajo, tarea y proceso. \\
+    \newpage
+    \item Define trabajo, tarea y proceso. \\ % Actividad 28
     \textbf{Respuesta:} 
 
     Un trabajo es cualquier programa que ejecutemos vinculado a una terminal de forma interactiva sin desasociarse de la misma. Este trabajo se compondrá de una serie de tareas.
@@ -271,7 +271,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     Un proceso es un programa en ejecucion, que el sistema operativo carga en memoria para que pueda ser ejecutado por la CPU. Un proceso puede componerse de varias tareas o subprocesos, y a su vez un trabajo se compone de varias tareas.
 
 
-    \item ¿Qué relación existe entre una tarea y un trabajo? \\
+    \item ¿Qué relación existe entre una tarea y un trabajo? \\ % Actividad 29
     \textbf{Respuesta:} 
     
     Como ya he mencionado anteriormente un trabajo se compone de un conjunto de tareas, que se ejecutarán secuencialmente para lograr un objetivo. Un trabajo se puede identificar como un solo proceso, que se podrá dividir en varias tareas, las cuales se pueden identificar como un conjunto de subprocesos o hilos. 
@@ -279,26 +279,26 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
 
 
 
-    \item ¿Una tarea puede ser un trabajo? ¿Y viceversa? \\ % Actividad 33
+    \item ¿Una tarea puede ser un trabajo? ¿Y viceversa? \\ % Actividad 30
     \textbf{Respuesta:} 
 
 
     Una tarea no puede considerarse un trabajo, ya que un trabajo se compone de varias tareas. Sin embargo, un trabajo si puede considerarse una tarea, ya que es un conjunto de tareas.
     
 
-    \item ¿Por qué decimos que una tarea se puede considerar un subproceso? \\
+    \item ¿Por qué decimos que una tarea se puede considerar un subproceso? \\ % Actividad 31
     \textbf{Respuesta:} 
     
     Por que un conjunto de tareas componen un trabajo, un trabajo se puede identificar como un solo proceso y un proceso se puede dividir en varios subprocesos o hilos. Por lo tanto una tarea se puede considerar como un subproceso.
 
 
-    \item ¿Qué diferencia existe entre un trabajo y un proceso? \\
+    \item ¿Qué diferencia existe entre un trabajo y un proceso? \\ % Actividad 32
     \textbf{Respuesta:} 
     
     Un proceso puede ejecutarse en primer o segundo plano. Es decir puede ejecutarse estando o no asociado a una shell de forma interactiva. Mientras que un trabajo se caracteriza por ser un programa iniciado de forma interactiva, asociado a una shell. Por tanto, todos los trabajos son procesos pero no todos los procesos son trabajos.
 
 
-    \item ¿Cuándo consideramos que un proceso es un trabajo? \\
+    \item ¿Cuándo consideramos que un proceso es un trabajo? \\ % Actividad 33
     \textbf{Respuesta:} 
     
     Un proceso es un trabajo cuando está vinculado e iniciado bajo una shell o terminal. 
@@ -310,7 +310,7 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     Los trabajos tienen un ámbito o contexto de usuario, ya que son iniciados por un usuario de forma interactiva. Por tanto, los trabajos no pueden ser iniciados por el sistema operativo de forma automática, como si ocurre con los daemons.
     
 
-    \item ¿De qué dos maneras, vía terminal, podemos revisar los trabajos? \\
+    \item ¿De qué dos maneras, vía terminal, podemos revisar los trabajos? \\ % Actividad 35
     \textbf{Respuesta:} 
     
     \begin{itemize}
@@ -327,61 +327,101 @@ A continuación se van a exponer una serie de preguntas relacionadas con el punt
     \item ¿Qué concepto está relacionado con dichos hilos? \\ % Actividad 37
     \textbf{Respuesta:} 
     
+    La concurrencia y la paralelismo. La concurrencia se refiere a la capacidad de un sistema para manejar múltiples tareas al mismo tiempo, mientras que el paralelismo implica la ejecución simultánea de múltiples tareas en diferentes núcleos de procesador. Los hilos permiten que un proceso realice múltiples tareas de manera concurrente, mejorando la eficiencia y el rendimiento del sistema (explicado en ejercicios posteriores). (Tambien podriamos hablar de hyperthreading)
 
 
     \item ¿Qué problema se deriva de la no existencia de programación multihilo? \\ % Actividad 38
     \textbf{Respuesta:} 
     
+    La ausencia de programación multihilo provoca una utilización ineficiente de los recursos del sistema, ya que un proceso debe ejecutar sus tareas de forma secuencial. Esto puede causar bloqueos, tiempos de respuesta más lentos y menor capacidad para manejar múltiples solicitudes simultáneamente. Además, impide aprovechar al completo los procesadores multinúcleo, lo que afecta al rendimiento de las aplicaciones modernas y reduce su capacidad de respuesta en entornos concurrentes.      
 
-    \item ¿Qué ocurre con la imagen del proceso cuando tenemos varios hilos corriendo del mismo proceso? \\
+    \item ¿Qué ocurre con la imagen del proceso cuando tenemos varios hilos corriendo del mismo proceso? \\ % Actividad 39
     \textbf{Respuesta:} 
     
+    Los recursos y la memoria asignados al proceso padre, son compartidos entre todos los hilos del mismo proceso. Todos los hilos comparten la misma imagen del proceso.
+    \newpage
 
-    \item ¿Por qué los hilos aumentan la eficiencia de la comunicación entre programas que están en ejecución? \\
+    \item ¿Por qué los hilos aumentan la eficiencia de la comunicación entre programas que están en ejecución? \\ % Actividad 40
     \textbf{Respuesta:} 
     
+    Debido a que los hilos comparten el mismo espacio de direcciones y recursos del proceso padre, la comunicación entre hilos es más rápida y eficiente que la comunicación entre procesos separados. Los hilos pueden intercambiar datos directamente a través de variables compartidas en memoria. Esto se traduce en:
+    
+    \begin{itemize}
+        \item Creacion mas eficiente de nuevos hilos a partir de un proceso exactamente, que crear un proceso nuevo.
+        \item Menor tiempo en la terminacion de un hilo que en la terminacion de un proceso.
+        \item Menor tiempo en un cambio de contexto entre hilos que entre procesos.
+        \item Mayor eficiencia en la comunicacion entre hilos debido a que comparten el mismo espacio de direcciones y recursos del proceso padre.
+    \end{itemize}
 
     \item ¿Por qué es más liviano el cambio de contexto entre dos hilos de un mismo proceso? \\
     \textbf{Respuesta:} 
     
+    Porque los hilos comparten el mismo espacio de direcciones y recursos del proceso padre, por lo que no es necesario cambiar el espacio de direcciones ni los recursos asignados al proceso padre. Imaginemos que tenemos dos hilos A y B del mismo proceso. Si el hilo A está en ejecución y se produce un cambio de contexto para que el hilo B pueda ejecutarse, solo es necesario guardar el estado del hilo A (contador de programa, registros y pila) y cargar el estado del hilo B. No es necesario cambiar el espacio de direcciones ni los recursos asignados al proceso padre.
 
-    \item Define el concepto de interrupción. \\
+
+    \item Define el concepto de interrupción. \\ % Actividad 41
     \textbf{Respuesta:} 
     
+    Una interrupción es una señal recibida por la CPU que indica que debe interrumpir la ejecucion actual y pasar a ejecutar codigo especifico que trate una determinada situacion.  
 
     \item Define el concepto de excepción. \\
     \textbf{Respuesta:} 
+
+    Lsd excepciones son un tipo de interrupción que emplea el procesador para notificar al sistema operativo cuando se produce un evento inesperado durante la ejecucion de un programa, como una division por cero o un acceso a memoria invalido.  
     
 
     \item ¿Cuándo se da una interrupción por software? ¿En qué consisten? \\
     \textbf{Respuesta:} 
     
+    Son generadas por el propio programa en ejecucion, mediante una instruccion especial llamada llamada a sistema. Se producen cuando un proceso en modo usuario necesita acceder a un recurso del sistema operativo, como la lectura o escritura de de disco. El proceso se interrumpe virtualmente hasta recibir respuesta, es decir, hasta que se complete la operación solicitada. Durante esta interrupcion, las instrucciones ejecutadas no seran del proceso sino del propio sistema operativo. Una vez finalizada la operacion, el proceso se reanudara desde el punto donde fue interrumpido.
+
 
     \item ¿Cuándo se da una interrupción por hardware? ¿En qué consisten? \\
     \textbf{Respuesta:} 
     
 
+    En general, las interrupciones por hardware son el resultado de operaciones de E/S. No son pruducto de un programa, sino las señales enviadas por los dispositivos perifericos para indicarle al procesador que requieren su atencion. 
+
+
+
+
+
     \item ¿Cuál fue la primera técnica que se implementó para las interrupciones? \\
     \textbf{Respuesta:} 
     
+    La primera tecnica fue la de sondeo o polling. 
 
     \item ¿Cómo se aplicaba la técnica anterior? \\
     \textbf{Respuesta:} 
+
+
+    Consistia en que el procesador revisaba de forma periodica el estado de los dispositivos perifericos para comprobar si alguno de ellos necesitaba su atencion. Si un dispositivo necesitaba atencion, el procesador interrumpia la ejecucion del programa en curso y atendia la solicitud del dispositivo. Esta tecnica era ineficiente, ya que el procesador perdia tiempo revisando el estado de los dispositivos perifericos en lugar de ejecutar instrucciones del programa en curso. Esto no puede admitirse en sistemas multitarea.
     
 
     \item ¿Qué ocurre con los modos de ejecución cuando se lanza una excepción por software? \\
     \textbf{Respuesta:} 
     
+    Cuando se lanza una excepcion por software, se genera un cambio de contexto, pasando del modo usuario al modo kernel o modo supervisor para que el sistema operativo pueda atender el error. 
+
+
+
 
     \item ¿Por qué decimos que las excepciones son un mecanismo de protección que permite garantizar la integridad de los datos almacenados tanto en el espacio del usuario como en el espacio del kernel? \\
     \textbf{Respuesta:} 
+
+    Porque las excepciones permiten al sistema operativo detectar y manejar errores o situaciones anormales que puedan comprometer la integridad de los datos. Al interceptar estas excepciones, el sistema operativo puede tomar medidas para evitar que los procesos en modo usuario accedan a áreas de memoria críticas del sistema o realicen operaciones no autorizadas
     
 
     \item ¿Bajo qué circunstancias se produce una excepción? \\
     \textbf{Respuesta:} 
     
-
-
+    \begin{itemize}
+        \item Division por cero
+        \item Acceso a memoria invalido
+        \item Instruccion ilegal
+        \item Desbordamiento de pila
+        \item Violacion de proteccion
+    \end{itemize}
 
 \end{enumerate}
 
