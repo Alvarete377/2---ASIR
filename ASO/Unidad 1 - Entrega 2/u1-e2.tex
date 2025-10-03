@@ -206,6 +206,66 @@ Realiza en GNU/Linux los siguientes ejercicios:
     Esta herramienta es una interfaz gráfica que permite a los usuarios monitorizar y gestionar los procesos del sistema de manera visual e intuitiva. Proporciona una vista en tiempo real del uso de recursos del sistema, incluyendo CPU, memoria, disco y red.
 
 
+
+
+    \item Accede al Administrador de tareas. Esta herramienta puede desplegarse pulsando la combinación de teclas Ctrl+Alt+Sup, ejecutando el programa "taskmgr", y seleccionando la opción "Administrador de tareas" del menú contextual de la barra de tareas.
+    \textbf{Respuesta:}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{6.png}
+        \caption{administrador de tareas.}
+    \end{figure}
+
+
+    \item ¿Qué podemos encontrar cuando nos situamos en las pestañas Procesos, Rendimiento y Detalles? Documenta, de manera exhaustiva, el contenido de las mismas.
+    \textbf{Respuesta:}
+
+    \begin{itemize}
+        \item En la pestaña de procesos nos encontramos todos los procesos que están en ejecución en el sistema, junto a la cantidad de recursos que están consumiendo. Estos procesos se dividen en aplicaciones, procesos en segundo plano y procesos de Windows.
+        \item Luego, en la pestaña de rendimiento, vemos la cantidad de recursos que está consumiendo el sistema en general. \% de CPU, \% de memoria principal, actividad en el almacenamiento secundario y tasa de subida y bajada de la conexión ethernet.
+    
+        \begin{enumerate}
+            \item En el campo de CPU vemos, su porcentaje de uso, la velocidad (frecuencia a la que funciona en GHz). Número de Procesos y subprocesos que están ejecutándose, tiempo de actividad. Y los identificadores, que son referencias a recursos del sistema que estos programas usan - como archivos abiertos, conexiones de red, claves de registro y objetos de memoria. Es normal que un solo proceso como Chrome o Explorer utilice miles de identificadores para gestionar sus diferentes componentes y recursos.
+            \item Seguidamente tenemos el campo de memoria. Aquí se nos muestran datos como la memoria principal en uso, la memoria disponible, la memoria confirmada, que es la reserva total de memoria (principal y secundaria o swap) que está siendo utilizada por los procesos. La memoria caché, que es utilizada para archivos frecuentes, puede ser eliminada indistintamente si otro proceso lo necesita. Bloque no paginado es memoria crítica del kernel que nunca puede moverse al disco. Al contrario del bloque paginado, que es memoria no crítica del kernel que puede moverse a disco cuando hay poca ram disponible.
+            \item Luego en el campo de disco, tenemos métrica como el tiempo de actividad, la velocidad de escritura y lectura, el tiempo de respuesta y la capacidad total del mismo.
+            \item Por último en ethernet encontramos la tasa de subida y bajada de nuestra conexión a la red. IPv4 e IPv6.
+        \end{enumerate}
+        \item En el apartado de detalles del menu contextual del administrador de tareas, encontraremos información mas exhaustiva de cada proceso corriendo en nuestro sistema. Como el estado del proceso, el ID del mismo, una descripción general, quien lo ejecuta …
+
+    
+    \end{itemize}
+
+    \item Además de lo anterior, lanza diversos programas (Calculadora, Bloc de notas, Chrome, etc) y estudia su evolución dentro del sistema. Utiliza para ello la funcionalidad de ordenar por recursos.
+
+    \textbf{Respuesta:}
+    \item Muestra cómo gestionar procesos desde el CMD.
+
+    \textbf{Respuesta:}
+    Para administrar procesos en windows tenemos varias herramientas, como ya hemos visto en la actividad anterior, el administrador de tareas es una herramienta gráfica para gestionar los procesos, pero estos también pueden ser administrados por línea de comandos cmd y powershell.
+
+    Para administrar procesos con cmd podemos recurrir a la utilidad de tasklist y taskkill
+
+    El comando tasklist muestra todos los procesos que se están ejecutando en el sistema
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{7.png}
+        \caption{Salida del comando tasklist.}
+    \end{figure}
+
+    Al igual que el comando ps de linux, en windows podemos filtrar añadiendo una serie de parámetros al comando tasklist. 
+
+    tasklist /v muestra información detallada sobre los procesos
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{8.png}
+        \caption{Salida del comando tasklist /v.}
+    \end{figure}
+
+    
+
+
 \end{enumerate}
 \end{document}
 

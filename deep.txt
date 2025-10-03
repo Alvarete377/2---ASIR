@@ -1,0 +1,358 @@
+Only in '/home/archi/2 ASIR/ASGBD/Implantacion_SGBD_postgres/Capturas_Pantallas': Practica1.aux
+Only in '/home/archi/2 ASIR/ASGBD/Implantacion_SGBD_postgres/Capturas_Pantallas': Practica1.fdb_latexmk
+Only in '/home/archi/2 ASIR/ASGBD/Implantacion_SGBD_postgres/Capturas_Pantallas': Practica1.fls
+Only in '/home/archi/2 ASIR/ASGBD/Implantacion_SGBD_postgres/Capturas_Pantallas': Practica1.log
+Only in '/home/archi/2 ASIR/ASGBD/Implantacion_SGBD_postgres/Capturas_Pantallas': Practica1.pdf
+Only in '/home/archi/2 ASIR/ASGBD/Implantacion_SGBD_postgres/Capturas_Pantallas': Practica1.synctex.gz
+Only in '/home/archi/2 ASIR/ASGBD/Implantacion_SGBD_postgres/Capturas_Pantallas': Practica1.tex
+Only in '/home/archi/2 ASIR/ASO/lolenxcul/informatica nogk/INFORMATICA 23-24/LENGUAJE DE MARCAS/TRIMESTRE 2/JAVASCRIPT': git
+Only in '/home/archi/2---ASIR/ASO/Unidad 1 - Entrega 2': 6.png
+Only in '/home/archi/2---ASIR/ASO/Unidad 1 - Entrega 2': 7.png
+Only in '/home/archi/2---ASIR/ASO/Unidad 1 - Entrega 2': 8.png
+Only in '/home/archi/2 ASIR/ASO/Unidad 1 - Entrega 2': u1-e2.aux
+Only in '/home/archi/2 ASIR/ASO/Unidad 1 - Entrega 2': u1-e2.fdb_latexmk
+Only in '/home/archi/2 ASIR/ASO/Unidad 1 - Entrega 2': u1-e2.fls
+Only in '/home/archi/2 ASIR/ASO/Unidad 1 - Entrega 2': u1-e2.log
+Binary files '/home/archi/2 ASIR/ASO/Unidad 1 - Entrega 2/u1-e2.pdf' and '/home/archi/2---ASIR/ASO/Unidad 1 - Entrega 2/u1-e2.pdf' differ
+Only in '/home/archi/2 ASIR/ASO/Unidad 1 - Entrega 2': u1-e2.synctex.gz
+diff -r "/home/archi/2 ASIR/ASO/Unidad 1 - Entrega 2/u1-e2.tex" "/home/archi/2---ASIR/ASO/Unidad 1 - Entrega 2/u1-e2.tex"
+208a209,268
+> 
+> 
+>     \item Accede al Administrador de tareas. Esta herramienta puede desplegarse pulsando la combinación de teclas Ctrl+Alt+Sup, ejecutando el programa "taskmgr", y seleccionando la opción "Administrador de tareas" del menú contextual de la barra de tareas.
+>     \textbf{Respuesta:}
+>     \begin{figure}[h!]
+>         \centering
+>         \includegraphics[width=0.7\textwidth]{6.png}
+>         \caption{administrador de tareas.}
+>     \end{figure}
+> 
+> 
+>     \item ¿Qué podemos encontrar cuando nos situamos en las pestañas Procesos, Rendimiento y Detalles? Documenta, de manera exhaustiva, el contenido de las mismas.
+>     \textbf{Respuesta:}
+> 
+>     \begin{itemize}
+>         \item En la pestaña de procesos nos encontramos todos los procesos que están en ejecución en el sistema, junto a la cantidad de recursos que están consumiendo. Estos procesos se dividen en aplicaciones, procesos en segundo plano y procesos de Windows.
+>         \item Luego, en la pestaña de rendimiento, vemos la cantidad de recursos que está consumiendo el sistema en general. \% de CPU, \% de memoria principal, actividad en el almacenamiento secundario y tasa de subida y bajada de la conexión ethernet.
+>     
+>         \begin{enumerate}
+>             \item En el campo de CPU vemos, su porcentaje de uso, la velocidad (frecuencia a la que funciona en GHz). Número de Procesos y subprocesos que están ejecutándose, tiempo de actividad. Y los identificadores, que son referencias a recursos del sistema que estos programas usan - como archivos abiertos, conexiones de red, claves de registro y objetos de memoria. Es normal que un solo proceso como Chrome o Explorer utilice miles de identificadores para gestionar sus diferentes componentes y recursos.
+>             \item Seguidamente tenemos el campo de memoria. Aquí se nos muestran datos como la memoria principal en uso, la memoria disponible, la memoria confirmada, que es la reserva total de memoria (principal y secundaria o swap) que está siendo utilizada por los procesos. La memoria caché, que es utilizada para archivos frecuentes, puede ser eliminada indistintamente si otro proceso lo necesita. Bloque no paginado es memoria crítica del kernel que nunca puede moverse al disco. Al contrario del bloque paginado, que es memoria no crítica del kernel que puede moverse a disco cuando hay poca ram disponible.
+>             \item Luego en el campo de disco, tenemos métrica como el tiempo de actividad, la velocidad de escritura y lectura, el tiempo de respuesta y la capacidad total del mismo.
+>             \item Por último en ethernet encontramos la tasa de subida y bajada de nuestra conexión a la red. IPv4 e IPv6.
+>         \end{enumerate}
+>         \item En el apartado de detalles del menu contextual del administrador de tareas, encontraremos información mas exhaustiva de cada proceso corriendo en nuestro sistema. Como el estado del proceso, el ID del mismo, una descripción general, quien lo ejecuta …
+> 
+>     
+>     \end{itemize}
+> 
+>     \item Además de lo anterior, lanza diversos programas (Calculadora, Bloc de notas, Chrome, etc) y estudia su evolución dentro del sistema. Utiliza para ello la funcionalidad de ordenar por recursos.
+> 
+>     \textbf{Respuesta:}
+>     \item Muestra cómo gestionar procesos desde el CMD.
+> 
+>     \textbf{Respuesta:}
+>     Para administrar procesos en windows tenemos varias herramientas, como ya hemos visto en la actividad anterior, el administrador de tareas es una herramienta gráfica para gestionar los procesos, pero estos también pueden ser administrados por línea de comandos cmd y powershell.
+> 
+>     Para administrar procesos con cmd podemos recurrir a la utilidad de tasklist y taskkill
+> 
+>     El comando tasklist muestra todos los procesos que se están ejecutando en el sistema
+> 
+>     \begin{figure}[h!]
+>         \centering
+>         \includegraphics[width=0.7\textwidth]{7.png}
+>         \caption{Salida del comando tasklist.}
+>     \end{figure}
+> 
+>     Al igual que el comando ps de linux, en windows podemos filtrar añadiendo una serie de parámetros al comando tasklist. 
+> 
+>     tasklist /v muestra información detallada sobre los procesos
+> 
+>     \begin{figure}[h!]
+>         \centering
+>         \includegraphics[width=0.7\textwidth]{8.png}
+>         \caption{Salida del comando tasklist /v.}
+>     \end{figure}
+> 
+>     
+> 
+> 
+Only in '/home/archi/2 ASIR/ASO/Unidad Didáctica 1. Arranque y procesos del sistema': u1.aux
+Only in '/home/archi/2 ASIR/ASO/Unidad Didáctica 1. Arranque y procesos del sistema': u1.fdb_latexmk
+Only in '/home/archi/2 ASIR/ASO/Unidad Didáctica 1. Arranque y procesos del sistema': u1.fls
+Only in '/home/archi/2 ASIR/ASO/Unidad Didáctica 1. Arranque y procesos del sistema': u1.log
+Binary files '/home/archi/2 ASIR/ASO/Unidad Didáctica 1. Arranque y procesos del sistema/u1.pdf' and '/home/archi/2---ASIR/ASO/Unidad Didáctica 1. Arranque y procesos del sistema/u1.pdf' differ
+Only in '/home/archi/2 ASIR/ASO/Unidad Didáctica 1. Arranque y procesos del sistema': u1.synctex.gz
+diff -r "/home/archi/2 ASIR/ASO/Unidad Didáctica 1. Arranque y procesos del sistema/u1.tex" "/home/archi/2---ASIR/ASO/Unidad Didáctica 1. Arranque y procesos del sistema/u1.tex"
+51c51
+<     \textbf{Respuesta:} Un proceso es un programa en ejecucion, que el sistema operativo carga y gestiona en memoria para que la CPU pueda ejecutarlo. Un programa es un conjunto de instrucciones escritas en un lenguaje de programación que realiza una tarea específica cuando se ejecuta. Un programa es un archivo estático almacenado en el disco, mientras que un proceso es una instancia dinámica de ese programa en ejecución. Un programa puede tener múltiples procesos asociados, cada uno con su propio estado y contexto de ejecución.
+---
+>     \textbf{Respuesta:} Un proceso es un programa en ejecucion, que el sistema operativo carga 
+62c62
+<     \newpage
+---
+> 
+66c66
+<     
+---
+>     \newpage
+81c81
+<     \item ¿Para qué usa el sistema el CP? \\ % Actividad 5
+---
+>     \item ¿Para qué usa el sistema el CP? \\
+85c85
+<     \item ¿Por qué es útil almacenar el estado de los registros de la CPU? \\ % Actividad 6
+---
+>     \item ¿Por qué es útil almacenar el estado de los registros de la CPU? \\
+89c89
+<     \item ¿Qué implica que un proceso corra en modo kernel? ¿Qué ocurrirá si se ocasiona un error durante dicha ejecución? \\ % Actividad 7
+---
+>     \item ¿Qué implica que un proceso corra en modo kernel? ¿Qué ocurrirá si se ocasiona un error durante dicha ejecución? \\
+93c93
+<     \item Relacionado con lo anterior, ¿cuál es el mensaje típico que muestra el sistema? \\ % Actividad 8
+---
+>     \item Relacionado con lo anterior, ¿cuál es el mensaje típico que muestra el sistema? \\
+97c97
+<     \item ¿Para qué sirven las llamadas a sistema? \\ % Actividad 9
+---
+>     \item ¿Para qué sirven las llamadas a sistema? \\
+100,101c100,101
+<     \newpage
+<     \item En relación con el espacio de direcciones virtuales que puede utilizar un proceso, ¿qué diferencia existe entre el modo usuario y el modo kernel? \\ % Actividad 10
+---
+> 
+>     \item En relación con el espacio de direcciones virtuales que puede utilizar un proceso, ¿qué diferencia existe entre el modo usuario y el modo kernel? \\
+105c105
+<     
+---
+>     \newpage
+107c107
+<     \item ¿Qué implicaciones tiene el hecho de que un proceso se esté ejecutando en primer plano? ¿Y en segundo? \\ % Actividad 11
+---
+>     \item ¿Qué implicaciones tiene el hecho de que un proceso se esté ejecutando en primer plano? ¿Y en segundo? \\ % Actividad 12
+120c120
+<     \item ¿Qué términos anglosajones utilizamos para referirnos a los procesos que corren en primer plano? ¿Y en segundo? \\ % Actividad 12
+---
+>     \item ¿Qué términos anglosajones utilizamos para referirnos a los procesos que corren en primer plano? ¿Y en segundo? \\
+137c137
+<     \newpage
+---
+> 
+154c154
+<     \item Cuando examinamos el estado de los procesos vía terminal, ¿qué símbolo tienen los daemons en el apartado de terminal (TT)? \\ % Actividad 17
+---
+>     \item Cuando examinamos el estado de los procesos vía terminal, ¿qué símbolo tienen los daemons en el apartado de terminal (TT)? \\
+161c161
+<     \item ¿Qué eventos principales provocan la creación de procesos? \\ % Actividad 18
+---
+>     \item ¿Qué eventos principales provocan la creación de procesos? \\
+171c171
+<     \item ¿Qué ocurre cuando el algoritmo de planificación asociado a una CPU es de tipo apropiativo? ¿Y no apropiativo? \\ % Actividad 19
+---
+>     \item ¿Qué ocurre cuando el algoritmo de planificación asociado a una CPU es de tipo apropiativo? ¿Y no apropiativo? \\
+181c181
+<     \newpage
+---
+> 
+220c220
+<     \newpage
+---
+> 
+253c253
+<     \item En el caso del formato BSD, ¿qué significan los modificadores <, N, s, l y +? \\ % Actividad 27
+---
+>     \item En el caso del formato BSD, ¿qué significan los modificadores <, N, s, l y +? \\
+263,264c263,264
+<     \newpage
+<     \item Define trabajo, tarea y proceso. \\ % Actividad 28
+---
+> 
+>     \item Define trabajo, tarea y proceso. \\
+274c274
+<     \item ¿Qué relación existe entre una tarea y un trabajo? \\ % Actividad 29
+---
+>     \item ¿Qué relación existe entre una tarea y un trabajo? \\
+282c282
+<     \item ¿Una tarea puede ser un trabajo? ¿Y viceversa? \\ % Actividad 30
+---
+>     \item ¿Una tarea puede ser un trabajo? ¿Y viceversa? \\ % Actividad 33
+289c289
+<     \item ¿Por qué decimos que una tarea se puede considerar un subproceso? \\ % Actividad 31
+---
+>     \item ¿Por qué decimos que una tarea se puede considerar un subproceso? \\
+295c295
+<     \item ¿Qué diferencia existe entre un trabajo y un proceso? \\ % Actividad 32
+---
+>     \item ¿Qué diferencia existe entre un trabajo y un proceso? \\
+301c301
+<     \item ¿Cuándo consideramos que un proceso es un trabajo? \\ % Actividad 33
+---
+>     \item ¿Cuándo consideramos que un proceso es un trabajo? \\
+313c313
+<     \item ¿De qué dos maneras, vía terminal, podemos revisar los trabajos? \\ % Actividad 35
+---
+>     \item ¿De qué dos maneras, vía terminal, podemos revisar los trabajos? \\
+330d329
+<     La concurrencia y la paralelismo. La concurrencia se refiere a la capacidad de un sistema para manejar múltiples tareas al mismo tiempo, mientras que el paralelismo implica la ejecución simultánea de múltiples tareas en diferentes núcleos de procesador. Los hilos permiten que un proceso realice múltiples tareas de manera concurrente, mejorando la eficiencia y el rendimiento del sistema (explicado en ejercicios posteriores). (Tambien podriamos hablar de hyperthreading)
+336d334
+<     La ausencia de programación multihilo provoca una utilización ineficiente de los recursos del sistema, ya que un proceso debe ejecutar sus tareas de forma secuencial. Esto puede causar bloqueos, tiempos de respuesta más lentos y menor capacidad para manejar múltiples solicitudes simultáneamente. Además, impide aprovechar al completo los procesadores multinúcleo, lo que afecta al rendimiento de las aplicaciones modernas y reduce su capacidad de respuesta en entornos concurrentes.      
+338c336
+<     \item ¿Qué ocurre con la imagen del proceso cuando tenemos varios hilos corriendo del mismo proceso? \\ % Actividad 39
+---
+>     \item ¿Qué ocurre con la imagen del proceso cuando tenemos varios hilos corriendo del mismo proceso? \\
+341,342d338
+<     Los recursos y la memoria asignados al proceso padre, son compartidos entre todos los hilos del mismo proceso. Todos los hilos comparten la misma imagen del proceso.
+<     \newpage
+344c340
+<     \item ¿Por qué los hilos aumentan la eficiencia de la comunicación entre programas que están en ejecución? \\ % Actividad 40
+---
+>     \item ¿Por qué los hilos aumentan la eficiencia de la comunicación entre programas que están en ejecución? \\
+347,354d342
+<     Debido a que los hilos comparten el mismo espacio de direcciones y recursos del proceso padre, la comunicación entre hilos es más rápida y eficiente que la comunicación entre procesos separados. Los hilos pueden intercambiar datos directamente a través de variables compartidas en memoria. Esto se traduce en:
+<     
+<     \begin{itemize}
+<         \item Creacion mas eficiente de nuevos hilos a partir de un proceso exactamente, que crear un proceso nuevo.
+<         \item Menor tiempo en la terminacion de un hilo que en la terminacion de un proceso.
+<         \item Menor tiempo en un cambio de contexto entre hilos que entre procesos.
+<         \item Mayor eficiencia en la comunicacion entre hilos debido a que comparten el mismo espacio de direcciones y recursos del proceso padre.
+<     \end{itemize}
+359,360d346
+<     Porque los hilos comparten el mismo espacio de direcciones y recursos del proceso padre, por lo que no es necesario cambiar el espacio de direcciones ni los recursos asignados al proceso padre. Imaginemos que tenemos dos hilos A y B del mismo proceso. Si el hilo A está en ejecución y se produce un cambio de contexto para que el hilo B pueda ejecutarse, solo es necesario guardar el estado del hilo A (contador de programa, registros y pila) y cargar el estado del hilo B. No es necesario cambiar el espacio de direcciones ni los recursos asignados al proceso padre.
+< 
+362c348
+<     \item Define el concepto de interrupción. \\ % Actividad 41
+---
+>     \item Define el concepto de interrupción. \\
+365d350
+<     Una interrupción es una señal recibida por la CPU que indica que debe interrumpir la ejecucion actual y pasar a ejecutar codigo especifico que trate una determinada situacion.  
+369,370d353
+< 
+<     Lsd excepciones son un tipo de interrupción que emplea el procesador para notificar al sistema operativo cuando se produce un evento inesperado durante la ejecucion de un programa, como una division por cero o un acceso a memoria invalido.  
+376,377d358
+<     Son generadas por el propio programa en ejecucion, mediante una instruccion especial llamada llamada a sistema. Se producen cuando un proceso en modo usuario necesita acceder a un recurso del sistema operativo, como la lectura o escritura de de disco. El proceso se interrumpe virtualmente hasta recibir respuesta, es decir, hasta que se complete la operación solicitada. Durante esta interrupcion, las instrucciones ejecutadas no seran del proceso sino del propio sistema operativo. Una vez finalizada la operacion, el proceso se reanudara desde el punto donde fue interrumpido.
+< 
+383,388d363
+<     En general, las interrupciones por hardware son el resultado de operaciones de E/S. No son pruducto de un programa, sino las señales enviadas por los dispositivos perifericos para indicarle al procesador que requieren su atencion. 
+< 
+< 
+< 
+< 
+< 
+392d366
+<     La primera tecnica fue la de sondeo o polling. 
+396,398d369
+< 
+< 
+<     Consistia en que el procesador revisaba de forma periodica el estado de los dispositivos perifericos para comprobar si alguno de ellos necesitaba su atencion. Si un dispositivo necesitaba atencion, el procesador interrumpia la ejecucion del programa en curso y atendia la solicitud del dispositivo. Esta tecnica era ineficiente, ya que el procesador perdia tiempo revisando el estado de los dispositivos perifericos en lugar de ejecutar instrucciones del programa en curso. Esto no puede admitirse en sistemas multitarea.
+404,407d374
+<     Cuando se lanza una excepcion por software, se genera un cambio de contexto, pasando del modo usuario al modo kernel o modo supervisor para que el sistema operativo pueda atender el error. 
+< 
+< 
+< 
+411,412d377
+< 
+<     Porque las excepciones permiten al sistema operativo detectar y manejar errores o situaciones anormales que puedan comprometer la integridad de los datos. Al interceptar estas excepciones, el sistema operativo puede tomar medidas para evitar que los procesos en modo usuario accedan a áreas de memoria críticas del sistema o realicen operaciones no autorizadas
+418,424c383,384
+<     \begin{itemize}
+<         \item Division por cero
+<         \item Acceso a memoria invalido
+<         \item Instruccion ilegal
+<         \item Desbordamiento de pila
+<         \item Violacion de proteccion
+<     \end{itemize}
+---
+> 
+> 
+Only in '/home/archi/2 ASIR': deep.txt
+Only in '/home/archi/2 ASIR/.git': COMMIT_EDITMSG
+diff -r "/home/archi/2 ASIR/.git/config" /home/archi/2---ASIR/.git/config
+7c7
+< 	url = git@github.com:Alvarete377/2---ASIR.git
+---
+> 	url = https://github.com/Alvarete377/2---ASIR.git
+Only in '/home/archi/2 ASIR/.git': filter-repo
+Binary files '/home/archi/2 ASIR/.git/index' and /home/archi/2---ASIR/.git/index differ
+Only in '/home/archi/2 ASIR/.git/info': refs
+diff -r "/home/archi/2 ASIR/.git/logs/HEAD" /home/archi/2---ASIR/.git/logs/HEAD
+1,5c1
+< 7187d3c02b49b1ecf467a57754f6e3bf650ba8b1 8f60d64f71c212865abfb27077949aa3f86e0a6d Alvarete377 <tezz17.com@gmail.com> 1759123772 +0200	commit: Ignorar archivos auxiliares de LaTeX
+< 8f60d64f71c212865abfb27077949aa3f86e0a6d 30eda5fb39f5d7e45da21c7ba21cebbdd8d0b485 Alvarete377 <tezz17.com@gmail.com> 1759123861 +0200	commit: anadir PDF,s
+< 30eda5fb39f5d7e45da21c7ba21cebbdd8d0b485 72df9289b437d8c9849bf4e41a2d5d96b31cfe16 Alvarete377 <tezz17.com@gmail.com> 1759216048 +0200	commit: u1a1ASO
+< 72df9289b437d8c9849bf4e41a2d5d96b31cfe16 a8debc073431430ad5aed1c1ef961a85197940d2 Alvarete377 <tezz17.com@gmail.com> 1759229729 +0200	commit: ASGBD p1.1.0
+< a8debc073431430ad5aed1c1ef961a85197940d2 d90d44d4bd5e9a30d37f3498cb69a0a5ba447a35 Alvarete377 <tezz17.com@gmail.com> 1759229792 +0200	commit: ASGBD p1.1.0
+---
+> 0000000000000000000000000000000000000000 b10909444ecdba7657a76f889d97252ea9847099 Alvarete377 <tezz17.com@gmail.com> 1759455128 +0200	clone: from https://github.com/Alvarete377/2---ASIR.git
+diff -r "/home/archi/2 ASIR/.git/logs/refs/heads/main" /home/archi/2---ASIR/.git/logs/refs/heads/main
+1,5c1
+< 7187d3c02b49b1ecf467a57754f6e3bf650ba8b1 8f60d64f71c212865abfb27077949aa3f86e0a6d Alvarete377 <tezz17.com@gmail.com> 1759123772 +0200	commit: Ignorar archivos auxiliares de LaTeX
+< 8f60d64f71c212865abfb27077949aa3f86e0a6d 30eda5fb39f5d7e45da21c7ba21cebbdd8d0b485 Alvarete377 <tezz17.com@gmail.com> 1759123861 +0200	commit: anadir PDF,s
+< 30eda5fb39f5d7e45da21c7ba21cebbdd8d0b485 72df9289b437d8c9849bf4e41a2d5d96b31cfe16 Alvarete377 <tezz17.com@gmail.com> 1759216048 +0200	commit: u1a1ASO
+< 72df9289b437d8c9849bf4e41a2d5d96b31cfe16 a8debc073431430ad5aed1c1ef961a85197940d2 Alvarete377 <tezz17.com@gmail.com> 1759229729 +0200	commit: ASGBD p1.1.0
+< a8debc073431430ad5aed1c1ef961a85197940d2 d90d44d4bd5e9a30d37f3498cb69a0a5ba447a35 Alvarete377 <tezz17.com@gmail.com> 1759229792 +0200	commit: ASGBD p1.1.0
+---
+> 0000000000000000000000000000000000000000 b10909444ecdba7657a76f889d97252ea9847099 Alvarete377 <tezz17.com@gmail.com> 1759455128 +0200	clone: from https://github.com/Alvarete377/2---ASIR.git
+Only in /home/archi/2---ASIR/.git/logs/refs/remotes/origin: HEAD
+Only in '/home/archi/2 ASIR/.git/logs/refs/remotes/origin': main
+Only in '/home/archi/2 ASIR/.git/objects': 00
+Only in '/home/archi/2 ASIR/.git/objects': 04
+Only in '/home/archi/2 ASIR/.git/objects': 06
+Only in '/home/archi/2 ASIR/.git/objects': 0d
+Only in '/home/archi/2 ASIR/.git/objects': 0f
+Only in '/home/archi/2 ASIR/.git/objects': 13
+Only in '/home/archi/2 ASIR/.git/objects': 17
+Only in '/home/archi/2 ASIR/.git/objects': 1d
+Only in '/home/archi/2 ASIR/.git/objects': 1e
+Only in '/home/archi/2 ASIR/.git/objects': 22
+Only in '/home/archi/2 ASIR/.git/objects': 2d
+Only in '/home/archi/2 ASIR/.git/objects': 30
+Only in '/home/archi/2 ASIR/.git/objects': 36
+Only in '/home/archi/2 ASIR/.git/objects': 39
+Only in '/home/archi/2 ASIR/.git/objects': 45
+Only in '/home/archi/2 ASIR/.git/objects': 55
+Only in '/home/archi/2 ASIR/.git/objects': 56
+Only in '/home/archi/2 ASIR/.git/objects': 57
+Only in '/home/archi/2 ASIR/.git/objects': 68
+Only in '/home/archi/2 ASIR/.git/objects': 72
+Only in '/home/archi/2 ASIR/.git/objects': 7f
+Only in '/home/archi/2 ASIR/.git/objects': 80
+Only in '/home/archi/2 ASIR/.git/objects': 8f
+Only in '/home/archi/2 ASIR/.git/objects': 93
+Only in '/home/archi/2 ASIR/.git/objects': a0
+Only in '/home/archi/2 ASIR/.git/objects': a5
+Only in '/home/archi/2 ASIR/.git/objects': a8
+Only in '/home/archi/2 ASIR/.git/objects': ab
+Only in '/home/archi/2 ASIR/.git/objects': ae
+Only in '/home/archi/2 ASIR/.git/objects': b1
+Only in '/home/archi/2 ASIR/.git/objects': b5
+Only in '/home/archi/2 ASIR/.git/objects': d5
+Only in '/home/archi/2 ASIR/.git/objects': d6
+Only in '/home/archi/2 ASIR/.git/objects': d9
+Only in '/home/archi/2 ASIR/.git/objects': e4
+Only in '/home/archi/2 ASIR/.git/objects': e9
+Only in '/home/archi/2 ASIR/.git/objects': ed
+Only in '/home/archi/2 ASIR/.git/objects': f0
+Only in '/home/archi/2 ASIR/.git/objects': f3
+Only in '/home/archi/2 ASIR/.git/objects': f4
+Only in '/home/archi/2 ASIR/.git/objects/info': commit-graph
+Only in '/home/archi/2 ASIR/.git/objects/info': packs
+Only in /home/archi/2---ASIR/.git/objects/pack: pack-192b38e9065e6f2f154c100ef890fa1854663af1.idx
+Only in /home/archi/2---ASIR/.git/objects/pack: pack-192b38e9065e6f2f154c100ef890fa1854663af1.pack
+Only in /home/archi/2---ASIR/.git/objects/pack: pack-192b38e9065e6f2f154c100ef890fa1854663af1.rev
+Only in '/home/archi/2 ASIR/.git/objects/pack': pack-1d8b9e4a65704e72910011f2ba3110618743fcaa.idx
+Only in '/home/archi/2 ASIR/.git/objects/pack': pack-1d8b9e4a65704e72910011f2ba3110618743fcaa.pack
+Only in '/home/archi/2 ASIR/.git/objects/pack': pack-1d8b9e4a65704e72910011f2ba3110618743fcaa.rev
+Only in '/home/archi/2 ASIR/.git': ORIG_HEAD
+diff -r "/home/archi/2 ASIR/.git/packed-refs" /home/archi/2---ASIR/.git/packed-refs
+2c2
+< 7187d3c02b49b1ecf467a57754f6e3bf650ba8b1 refs/heads/main
+---
+> b10909444ecdba7657a76f889d97252ea9847099 refs/remotes/origin/main
+diff -r "/home/archi/2 ASIR/.git/refs/heads/main" /home/archi/2---ASIR/.git/refs/heads/main
+1c1
+< d90d44d4bd5e9a30d37f3498cb69a0a5ba447a35
+---
+> b10909444ecdba7657a76f889d97252ea9847099
+Only in /home/archi/2---ASIR/.git/refs/remotes/origin: HEAD
+Only in '/home/archi/2 ASIR/.git/refs/remotes/origin': main
+Only in '/home/archi/2 ASIR/IAW': django_project
+Only in '/home/archi/2 ASIR/IAW': proyecto
